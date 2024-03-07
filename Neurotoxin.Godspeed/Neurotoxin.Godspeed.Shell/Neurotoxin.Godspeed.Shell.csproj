@@ -322,11 +322,6 @@
       <DependentUpon>CaptionButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Primitives\DialogBase.cs" />
-    <Compile Include="Properties\Resources.hu-HU.Designer.cs">
-      <DependentUpon>Resources.hu-HU.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Reporting\RawPostData.cs" />
     <Compile Include="Reporting\HttpForm.cs" />
     <Compile Include="Reporting\ErrorReport.cs" />
@@ -669,16 +664,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.hu-HU.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.hu-HU.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru-RU.resx" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
