@@ -10,6 +10,8 @@ namespace Neurotoxin.Godspeed.Shell.Converters
     {
         public string Suffix { get; set; }
 
+        private string[] SuffixName = { "B", "KB", "MB", "GB", "TB", "PB" };
+
         public SizeConverter() : base(new [] { "Size", "IsRefreshing", "Type", "TitleType" })
         {
         }
@@ -49,7 +51,19 @@ namespace Neurotoxin.Godspeed.Shell.Converters
 
         private string SizeFormat(long? size)
         {
-            return size.HasValue ? string.Format("{0:#,0} {1}", size.Value, Suffix).Trim() : null;
+            if (size.HasValue)
+            {
+                int c;
+                for (c = 0; c < SuffixName.Length; c++)
+                {
+                    long m = 1 << ((c + 1) * 10);
+                    if (size.Value < m)
+                        break;
+                }
+                double n = size.Value / (double)(1 << (c * 10));
+                return String.Format("{0:0.##} {1}", n, SuffixName[c]).Trim();
+            }
+            return null;
         }
 
     }
