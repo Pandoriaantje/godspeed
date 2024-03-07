@@ -1016,7 +1016,7 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
 
         private void ExecuteSearchGoogleCommand()
         {
-            Web.Browse(string.Format("http://www.google.com/#q={0}", CurrentRow.Name));
+            Web.Browse(string.Format("http://www.google.com/search?q={0}", CurrentRow.Name));
         }
 
         #endregion
