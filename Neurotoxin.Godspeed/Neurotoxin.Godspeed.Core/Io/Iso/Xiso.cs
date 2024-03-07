@@ -315,7 +315,7 @@ namespace Neurotoxin.Godspeed.Core.Io.Iso
                 writer.BaseStream.Seek(_gamePartition.SectorToOffset(sector) + offset, SeekOrigin.Begin);
                 writer.Write(data, 0, length.Value);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Debugger.Break();
             }

@@ -56,11 +56,11 @@ namespace Neurotoxin.Godspeed.Shell.Converters
                 int c;
                 for (c = 0; c < SuffixName.Length; c++)
                 {
-                    long m = 1 << ((c + 1) * 10);
+                    long m = 1L << ((c + 1) * 10);
                     if (size.Value < m)
                         break;
                 }
-                double n = size.Value / (double)(1 << (c * 10));
+                double n = size.Value / (double)(1L << (c * 10));
                 return String.Format("{0:0.##} {1}", n, SuffixName[c]).Trim();
             }
             return null;
