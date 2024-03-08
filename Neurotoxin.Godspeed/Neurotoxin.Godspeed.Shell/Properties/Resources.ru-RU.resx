@@ -168,11 +168,11 @@
   <data name="AvatarItemSingular" xml:space="preserve">
     <value>Avatar Item</value>
   </data>
+  <data name="B" xml:space="preserve">
+    <value>б</value>
+  </data>
   <data name="Browse" xml:space="preserve">
     <value>Обзор</value>
-  </data>
-  <data name="Bytes" xml:space="preserve">
-    <value> байт</value>
   </data>
   <data name="CacheExpiration" xml:space="preserve">
     <value>Истечение срока действия кэша</value>
@@ -541,6 +541,9 @@ Do you want to delete the old application data from your hard drive?</value>
   <data name="GameVideoSingular" xml:space="preserve">
     <value>Game Video</value>
   </data>
+  <data name="GB" xml:space="preserve">
+    <value>Гб</value>
+  </data>
   <data name="GettingData" xml:space="preserve">
     <value>Getting data</value>
   </data>
@@ -617,13 +620,16 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Папка</value>
   </data>
   <data name="ItemTypeDrive" xml:space="preserve">
-    <value>Drive</value>
+    <value>Диск</value>
   </data>
   <data name="ItemTypeFile" xml:space="preserve">
     <value>Файл</value>
   </data>
   <data name="ItemTypeLink" xml:space="preserve">
-    <value>ССЫЛКА</value>
+    <value>Ссылка</value>
+  </data>
+  <data name="KB" xml:space="preserve">
+    <value>Кб</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Язык</value>
@@ -666,6 +672,9 @@ It will automatically close the FTP connection.</value>
   </data>
   <data name="LoginToFreestyleDashHttpServer" xml:space="preserve">
     <value>The HTTP Authentication with non-default username and/or password is enabled in your FreestyleDash. If you want GODspeed to be able to notify FSD/F3 about content changes please enter the corresponding login information:</value>
+  </data>
+  <data name="MB" xml:space="preserve">
+    <value>Мб</value>
   </data>
   <data name="MediaId" xml:space="preserve">
     <value>Media ID</value>
@@ -846,6 +855,9 @@ It will automatically close the FTP connection.</value>
   </data>
   <data name="Pause" xml:space="preserve">
     <value>Пауза</value>
+  </data>
+  <data name="PB" xml:space="preserve">
+    <value>Пб</value>
   </data>
   <data name="PEC" xml:space="preserve">
     <value>PEC</value>
@@ -1108,6 +1120,9 @@ It will automatically close the FTP connection.</value>
   <data name="TargetFileHeader" xml:space="preserve">
     <value>Заменить этот</value>
   </data>
+  <data name="TB" xml:space="preserve">
+    <value>Тб</value>
+  </data>
   <data name="TelevisionPlural" xml:space="preserve">
     <value>TV Shows</value>
   </data>
@@ -1142,7 +1157,7 @@ It will automatically close the FTP connection.</value>
     <value>Title Recognition</value>
   </data>
   <data name="TitleTypeContent" xml:space="preserve">
-    <value>КОНТЕНТ</value>
+    <value>Контент</value>
   </data>
   <data name="TitleTypeContentLong" xml:space="preserve">
     <value>КОНТЕНТ</value>
@@ -1154,16 +1169,16 @@ It will automatically close the FTP connection.</value>
     <value>Data file</value>
   </data>
   <data name="TitleTypeGame" xml:space="preserve">
-    <value>ИГРА</value>
+    <value>Игра</value>
   </data>
   <data name="TitleTypeGameLong" xml:space="preserve">
-    <value>ИГРА</value>
+    <value>Игра</value>
   </data>
   <data name="TitleTypeProfile" xml:space="preserve">
-    <value>ПРОФИЛЬ</value>
+    <value>Профиль</value>
   </data>
   <data name="TitleTypeProfileLong" xml:space="preserve">
-    <value>ПРОФИЛЬ</value>
+    <value>Профиль</value>
   </data>
   <data name="TitleTypeSystemDir" xml:space="preserve">
     <value>SystemDir</value>

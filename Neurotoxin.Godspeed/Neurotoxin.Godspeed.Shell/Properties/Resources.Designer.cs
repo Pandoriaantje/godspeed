@@ -214,6 +214,15 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на B.
+        /// </summary>
+        internal static string B {
+            get {
+                return ResourceManager.GetString("B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Browse.
         /// </summary>
         internal static string Browse {
@@ -1331,6 +1340,15 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на GB.
+        /// </summary>
+        internal static string GB {
+            get {
+                return ResourceManager.GetString("GB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Getting data.
         /// </summary>
         internal static string GettingData {
@@ -1583,6 +1601,15 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на KB.
+        /// </summary>
+        internal static string KB {
+            get {
+                return ResourceManager.GetString("KB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Language.
         /// </summary>
         internal static string Language {
@@ -1699,6 +1726,15 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         internal static string LoginToFreestyleDashHttpServer {
             get {
                 return ResourceManager.GetString("LoginToFreestyleDashHttpServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на MB.
+        /// </summary>
+        internal static string MB {
+            get {
+                return ResourceManager.GetString("MB", resourceCulture);
             }
         }
         
@@ -2239,6 +2275,15 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         internal static string Pause {
             get {
                 return ResourceManager.GetString("Pause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на PB.
+        /// </summary>
+        internal static string PB {
+            get {
+                return ResourceManager.GetString("PB", resourceCulture);
             }
         }
         
@@ -3022,6 +3067,15 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         internal static string TargetFileHeader {
             get {
                 return ResourceManager.GetString("TargetFileHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на TB.
+        /// </summary>
+        internal static string TB {
+            get {
+                return ResourceManager.GetString("TB", resourceCulture);
             }
         }
         

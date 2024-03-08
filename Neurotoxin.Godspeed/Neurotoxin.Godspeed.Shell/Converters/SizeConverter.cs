@@ -1,5 +1,6 @@
 using System;
 using Neurotoxin.Godspeed.Presentation.Bindings;
+using Neurotoxin.Godspeed.Presentation.Converters;
 using Neurotoxin.Godspeed.Shell.Constants;
 using Neurotoxin.Godspeed.Shell.ViewModels;
 using Resx = Neurotoxin.Godspeed.Shell.Properties.Resources;
@@ -8,10 +9,6 @@ namespace Neurotoxin.Godspeed.Shell.Converters
 {
     public class SizeConverter : MultiBindingConverterBase<FileSystemItemViewModel, string, SizeConverterParameter>
     {
-        public string Suffix { get; set; }
-
-        private string[] SuffixName = { "B", "KB", "MB", "GB", "TB", "PB" };
-
         public SizeConverter() : base(new [] { "Size", "IsRefreshing", "Type", "TitleType" })
         {
         }
@@ -42,7 +39,7 @@ namespace Neurotoxin.Godspeed.Shell.Converters
 
                     var rm = Resx.ResourceManager;
                     return parameter == SizeConverterParameter.ListView
-                               ? string.Format("<{0}>", rm.GetString(resxName).ToUpper())
+                               ? string.Format("<{0}>", rm.GetString(resxName))
                                : rm.GetString(resxName);
                 default:
                     throw new NotSupportedException("Invalid parameter value: " + parameter);
@@ -51,17 +48,9 @@ namespace Neurotoxin.Godspeed.Shell.Converters
 
         private string SizeFormat(long? size)
         {
-            if (size.HasValue)
-            {
-                int c;
-                for (c = 0; c < SuffixName.Length; c++)
-                {
-                    long m = 1L << ((c + 1) * 10);
-                    if (size.Value < m)
-                        break;
-                }
-                double n = size.Value / (double)(1L << (c * 10));
-                return String.Format("{0:0.##} {1}", n, SuffixName[c]).Trim();
+            if (size.HasValue) {
+                var si = ((string, string))new FileSizeConverter().Convert(size.Value, null, null, null);
+                return String.Format("{0} {1}", si.Item1, Resx.ResourceManager.GetString(si.Item2));
             }
             return null;
         }

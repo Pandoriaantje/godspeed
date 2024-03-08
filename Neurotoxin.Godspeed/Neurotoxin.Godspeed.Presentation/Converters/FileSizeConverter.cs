@@ -10,7 +10,7 @@ namespace Neurotoxin.Godspeed.Presentation.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string[] units = { "B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
+            string[] units = { "B", "KB", "MB", "GB", "TB", "PB" };
             double size = (long)value;
             int unit = 0;
 
@@ -20,7 +20,7 @@ namespace Neurotoxin.Godspeed.Presentation.Converters
                 ++unit;
             }
 
-            return String.Format("{0:0.#} {1}", size, units[unit]);
+            return (String.Format("{0:0.00}", size), units[unit]);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

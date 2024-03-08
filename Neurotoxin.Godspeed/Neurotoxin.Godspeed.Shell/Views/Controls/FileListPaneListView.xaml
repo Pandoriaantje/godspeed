@@ -107,9 +107,6 @@
                         <DataTrigger Binding="{Binding IsSelected}" Value="True">
                             <Setter Property="Foreground" Value="Red" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding Size}" Value="{x:Null}">
-                            <Setter Property="HorizontalAlignment" Value="Left" />
-                        </DataTrigger>
                         <DataTrigger Binding="{Binding IsRefreshing}" Value="{StaticResource True}">
                             <Setter Property="HorizontalAlignment" Value="Center" />
                         </DataTrigger>
