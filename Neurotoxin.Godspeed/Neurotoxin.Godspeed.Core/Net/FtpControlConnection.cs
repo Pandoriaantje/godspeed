@@ -177,8 +177,8 @@ namespace Neurotoxin.Godspeed.Core.Net
         public void Dispose()
         {
             Close();
-            _streamReader.Dispose();
-            _socketStream.Dispose();
+            _streamReader?.Dispose();
+            _socketStream?.Dispose();
             _streamReader = null;
             _socketStream = null;
         }

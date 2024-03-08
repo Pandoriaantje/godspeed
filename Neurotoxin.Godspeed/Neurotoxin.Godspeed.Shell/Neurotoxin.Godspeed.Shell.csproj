@@ -189,7 +189,6 @@
     <Compile Include="Constants\RemoteCopyMode.cs" />
     <Compile Include="Constants\ResumeCapability.cs" />
     <Compile Include="Constants\Shutdown.cs" />
-    <Compile Include="Constants\SizeNames.cs" />
     <Compile Include="Constants\Strings.cs" />
     <Compile Include="Constants\TitleType.cs" />
     <Compile Include="Constants\ToggleSelectionMode.cs" />

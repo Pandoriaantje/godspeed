@@ -36,11 +36,11 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Grid.Row="0" Content="{lex:LocText Overwrite}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="0" Grid.Row="0" Content="{lex:Loc Overwrite}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding OverwriteOption}" IsEnabled="{Binding IsOverwriteEnabled}" />
-                <Button Grid.Column="1" Grid.Row="0" Content="{lex:LocText Rename}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="1" Grid.Row="0" Content="{lex:Loc Rename}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding RenameOption}" IsEnabled="{Binding IsRenameEnabled}" />
-                <Button Grid.Column="2" Grid.Row="0" Content="{lex:LocText Cancel}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="2" Grid.Row="0" Content="{lex:Loc Cancel}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding CancelOption}" IsEnabled="{Binding IsCancelEnabled}" />
             </Grid>
 
@@ -56,23 +56,23 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Button Grid.Column="0" Grid.Row="0" Content="{lex:LocText Overwrite}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="0" Grid.Row="0" Content="{lex:Loc Overwrite}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding OverwriteOption}" IsEnabled="{Binding IsOverwriteEnabled}" />
-                <Button Grid.Column="1" Grid.Row="0" Content="{lex:LocText OverwriteAll}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="1" Grid.Row="0" Content="{lex:Loc OverwriteAll}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding OverwriteAllOption}" IsEnabled="{Binding IsOverwriteAllEnabled}" />
-                <Button Grid.Column="2" Grid.Row="0" Content="{lex:LocText OverwriteAllSmaller}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="2" Grid.Row="0" Content="{lex:Loc OverwriteAllSmaller}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding OverwriteAllSmallerOption}" IsEnabled="{Binding IsOverwriteAllSmallerEnabled}" />
-                <Button Grid.Column="0" Grid.Row="1" Content="{lex:LocText Resume}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="0" Grid.Row="1" Content="{lex:Loc Resume}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding ResumeOption}" IsEnabled="{Binding IsResumeEnabled}" />
-                <Button Grid.Column="1" Grid.Row="1" Content="{lex:LocText ResumeAll}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="1" Grid.Row="1" Content="{lex:Loc ResumeAll}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding ResumeAllOption}" IsEnabled="{Binding IsResumeAllEnabled}" />
-                <Button Grid.Column="2" Grid.Row="1" Content="{lex:LocText Rename}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="2" Grid.Row="1" Content="{lex:Loc Rename}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding RenameOption}" IsEnabled="{Binding IsRenameEnabled}" />
-                <Button Grid.Column="0" Grid.Row="2" Content="{lex:LocText Skip}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="0" Grid.Row="2" Content="{lex:Loc Skip}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding SkipOption}" IsEnabled="{Binding IsSkipEnabled}" />
-                <Button Grid.Column="1" Grid.Row="2" Content="{lex:LocText SkipAll}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="1" Grid.Row="2" Content="{lex:Loc SkipAll}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding SkipAllOption}" IsEnabled="{Binding IsSkipAllEnabled}" />
-                <Button Grid.Column="2" Grid.Row="2" Content="{lex:LocText Cancel}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
+                <Button Grid.Column="2" Grid.Row="2" Content="{lex:Loc Cancel}" Width="{lex:Loc WriteErrorDialogButtonWidth}"
                     Margin="5" Command="{Binding CloseCommand}" CommandParameter="{Binding CancelOption}" IsEnabled="{Binding IsCancelEnabled}" />
             </Grid>
         </Grid>

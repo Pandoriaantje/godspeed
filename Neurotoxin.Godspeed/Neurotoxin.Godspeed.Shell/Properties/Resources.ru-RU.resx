@@ -362,7 +362,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Disable FSD/F3 status polling</value>
   </data>
   <data name="DisableNotificationSound" xml:space="preserve">
-    <value>Disable notification sound</value>
+    <value>Выключить звук уведомления</value>
   </data>
   <data name="DisableOptionAll" xml:space="preserve">
     <value>Для всех соединений</value>
@@ -479,7 +479,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>После загрузки</value>
   </data>
   <data name="FsdContentScanTriggerDisabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Отключено</value>
   </data>
   <data name="FsdMenu" xml:space="preserve">
     <value>F3/Aurora</value>
@@ -623,7 +623,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Файл</value>
   </data>
   <data name="ItemTypeLink" xml:space="preserve">
-    <value>Link</value>
+    <value>ССЫЛКА</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Язык</value>
@@ -803,13 +803,13 @@ It will automatically close the FTP connection.</value>
     <value>Output Location</value>
   </data>
   <data name="Overwrite" xml:space="preserve">
-    <value>Overwrite</value>
+    <value>Заменить</value>
   </data>
   <data name="OverwriteAll" xml:space="preserve">
-    <value>Overwrite all</value>
+    <value>Заменить все</value>
   </data>
   <data name="OverwriteAllSmaller" xml:space="preserve">
-    <value>Overwrite all smaller</value>
+    <value>Заменить все меньше</value>
   </data>
   <data name="PaddingRemoval" xml:space="preserve">
     <value>Paddig Removal</value>
@@ -959,10 +959,10 @@ It will automatically close the FTP connection.</value>
     <value>Report</value>
   </data>
   <data name="Resume" xml:space="preserve">
-    <value>Resume</value>
+    <value>Продолжить</value>
   </data>
   <data name="ResumeAll" xml:space="preserve">
-    <value>Resume all</value>
+    <value>Продолжить всё</value>
   </data>
   <data name="ResumeIsNotAvailableConfirmation" xml:space="preserve">
     <value>The resume function on target machine is not available. Do you really want to abort the transfer?</value>
@@ -1049,7 +1049,7 @@ It will automatically close the FTP connection.</value>
     <value>{0:#,0} / {1:#,0} байт в {2} / {3:файле;файлах}, {4} / {5:папка;папок}</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Пропуск</value>
+    <value>Пропустить</value>
   </data>
   <data name="SkipAll" xml:space="preserve">
     <value>Пропустить всё</value>
@@ -1067,7 +1067,7 @@ It will automatically close the FTP connection.</value>
     <value>Source file</value>
   </data>
   <data name="SourceFileHeader" xml:space="preserve">
-    <value>With this</value>
+    <value>Этим файлом</value>
   </data>
   <data name="SpecialCharactersNotSupported" xml:space="preserve">
     <value>This FTP server does not support special characters in file and folder names!</value>
@@ -1103,10 +1103,10 @@ It will automatically close the FTP connection.</value>
     <value>System Error</value>
   </data>
   <data name="TargetAlreadyExists" xml:space="preserve">
-    <value>Target already exists</value>
+    <value>Фаил уже существует</value>
   </data>
   <data name="TargetFileHeader" xml:space="preserve">
-    <value>Overwrite</value>
+    <value>Заменить этот</value>
   </data>
   <data name="TelevisionPlural" xml:space="preserve">
     <value>TV Shows</value>
