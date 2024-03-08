@@ -102,7 +102,7 @@
             </DataGridTextColumn.Binding>
             <DataGridTextColumn.ElementStyle>
                 <Style TargetType="TextBlock">
-                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding IsSelected}" Value="True">
                             <Setter Property="Foreground" Value="Red" />
@@ -121,7 +121,7 @@
                             Header="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:Date}" SortMemberPath="Date" Width="100" IsReadOnly="True">
             <DataGridTextColumn.ElementStyle>
                 <Style TargetType="TextBlock">
-                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding IsSelected}" Value="True">
                             <Setter Property="Foreground" Value="Red" />

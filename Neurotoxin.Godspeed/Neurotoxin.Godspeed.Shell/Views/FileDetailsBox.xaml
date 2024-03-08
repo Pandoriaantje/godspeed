@@ -4,10 +4,15 @@
              xmlns:constants="clr-namespace:Neurotoxin.Godspeed.Shell.Constants"
              xmlns:controls="clr-namespace:Neurotoxin.Godspeed.Presentation.Controls;assembly=Neurotoxin.Godspeed.Presentation"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
-             xmlns:co="clr-namespace:Neurotoxin.Godspeed.Shell.Converters" lex:LocalizeDictionary.DesignCulture="en-US"
+             xmlns:co="clr-namespace:Neurotoxin.Godspeed.Shell.Converters"
+             xmlns:coo="clr-namespace:Neurotoxin.Godspeed.Presentation.Converters;assembly=Neurotoxin.Godspeed.Presentation"
+             lex:LocalizeDictionary.DesignCulture="en-US"
              lex:ResxLocalizationProvider.DefaultAssembly="Neurotoxin.Godspeed.Shell"
              lex:ResxLocalizationProvider.DefaultDictionary="Resources"
              MinHeight="120">
+    <UserControl.Resources>
+        <coo:FileSizeConverter x:Key="FileSizeConverter"/>
+    </UserControl.Resources>
     <Grid x:Name="LayoutRoot">
         <Grid Visibility="{Binding Converter={StaticResource NotNullOrEmptyConverter}}">
             <Grid.ColumnDefinitions>
@@ -39,11 +44,7 @@
                 <TextBlock Grid.Row="0" Text="{lex:LocText Type, Suffix={x:Static constants:Strings.ColonSpace}}"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding ContentType, Converter={StaticResource ContentTypeConverter}}"/>
                 <TextBlock Grid.Row="1" Text="{lex:LocText Size, Suffix={x:Static constants:Strings.ColonSpace}}"/>
-                <TextBlock Grid.Row="1" Grid.Column="1">
-                    <TextBlock.Text>
-                        <co:SizeConverter Suffix="{lex:Loc Bytes}"/>
-                    </TextBlock.Text>
-                </TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Size, Converter={StaticResource FileSizeConverter}}"/>
                 <TextBlock Grid.Row="2" Text="{lex:LocText Date, Suffix={x:Static constants:Strings.ColonSpace}}"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Date, StringFormat={lex:LocText Neurotoxin.Godspeed.Shell:Resources:DateTimeFormat}}"/>
             </Grid>
