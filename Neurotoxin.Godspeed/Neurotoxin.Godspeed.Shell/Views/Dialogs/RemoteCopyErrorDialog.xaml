@@ -6,7 +6,7 @@
                        lex:LocalizeDictionary.DesignCulture="en-US"
                        lex:ResxLocalizationProvider.DefaultAssembly="Neurotoxin.Godspeed.Shell"
                        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
-                       Width="600" Topmost="True" Title="{lex:LocText SessionInitiationFailed}">
+                       Width="600" Topmost="True" Title="{lex:Loc SessionInitiationFailed}">
     <Grid x:Name="LayoutRoot">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -17,11 +17,11 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Margin="5" x:Name="ErrorMessage" TextWrapping="Wrap" />
-        <TextBlock Grid.Row="1" Margin="5,10,5,5" Text="{lex:LocText WhatDoYouWantToDo}" />
+        <TextBlock Grid.Row="1" Margin="5,10,5,5" Text="{lex:Loc WhatDoYouWantToDo}" />
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="{lex:LocText ContinueWithIndirectCopy}" Margin="5" Padding="10,0,10,0" x:Name="Continue" Click="OkButtonClick" />
-            <Button Content="{lex:LocText TurnOffRemoteCopyAndContinue}" Margin="5" Padding="10,0,10,0" x:Name="TurnOffAndContinue" Click="TurnOffButtonClick" />
-            <Button Content="{lex:LocText}" Margin="5" Width="80" x:Name="Abort" Click="CancelButtonClick" />
+            <Button Content="{lex:Loc ContinueWithIndirectCopy}" Margin="5" Padding="10,0,10,0" x:Name="Continue" Click="OkButtonClick" />
+            <Button Content="{lex:Loc TurnOffRemoteCopyAndContinue}" Margin="5" Padding="10,0,10,0" x:Name="TurnOffAndContinue" Click="TurnOffButtonClick" />
+            <Button Content="{lex:Loc}" Margin="5" Width="80" x:Name="Abort" Click="CancelButtonClick" />
         </StackPanel>
     </Grid>
 </primitives:DialogBase>

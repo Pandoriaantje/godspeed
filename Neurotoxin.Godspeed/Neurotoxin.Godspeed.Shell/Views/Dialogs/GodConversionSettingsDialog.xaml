@@ -97,8 +97,8 @@
         </GroupBox>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,5,0">
-            <Button Content="{lex:LocText StartConversion}" MinWidth="75" Padding="10,0,10,0" Margin="0,0,5,0" Click="OkButtonClick" />
-            <Button Content="{lex:LocText Cancel}" Width="75" Click="CancelButtonClick" />
+            <Button Content="{lex:Loc StartConversion}" MinWidth="75" Padding="10,0,10,0" Margin="0,0,5,0" Click="OkButtonClick" />
+            <Button Content="{lex:Loc Cancel}" Width="75" Click="CancelButtonClick" />
         </StackPanel>
     </Grid>
 </primitives:DialogBase>

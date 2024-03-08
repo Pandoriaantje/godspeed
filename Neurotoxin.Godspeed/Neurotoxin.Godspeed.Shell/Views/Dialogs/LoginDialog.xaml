@@ -32,9 +32,9 @@
         <CheckBox Grid.Row="3" Grid.Column="1" Content="{lex:Loc RememberPassword}" Margin="0,0,0,10" IsChecked="{Binding RememberPassword}" Visibility="{Binding IsRememberPasswordEnabled, Converter={StaticResource BoolToVis}}"/>
 
         <StackPanel Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Content="{lex:LocText UseDefault}" Margin="5" MinWidth="75" Click="DefaultButtonClick" Visibility="{Binding IsUseDefaultEnabled, Converter={StaticResource BoolToVis}}"/>
-            <Button Content="{lex:LocText Ok}" Margin="5" MinWidth="75" Click="OkButtonClick" IsEnabled="{Binding IsValid}"/>
-            <Button Content="{lex:LocText Cancel}" Margin="5" MinWidth="75" Click="CancelButtonClick"/>
+            <Button Content="{lex:Loc UseDefault}" Margin="5" MinWidth="75" Click="DefaultButtonClick" Visibility="{Binding IsUseDefaultEnabled, Converter={StaticResource BoolToVis}}"/>
+            <Button Content="{lex:Loc Ok}" Margin="5" MinWidth="75" Click="OkButtonClick" IsEnabled="{Binding IsValid}"/>
+            <Button Content="{lex:Loc Cancel}" Margin="5" MinWidth="75" Click="CancelButtonClick"/>
         </StackPanel>
 
     </Grid>

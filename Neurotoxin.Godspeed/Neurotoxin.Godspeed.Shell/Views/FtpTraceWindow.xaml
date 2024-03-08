@@ -23,7 +23,7 @@
         </TextBox>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
-            <Button Width="75" Content="{lex:LocText Close}" Margin="5" Command="{Binding CloseCommand}" />
+            <Button Width="75" Content="{lex:Loc Close}" Margin="5" Command="{Binding CloseCommand}" />
         </StackPanel>
     </Grid>
     <e:Interaction.Triggers>

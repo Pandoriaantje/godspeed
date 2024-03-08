@@ -22,7 +22,7 @@
 
         <Border Grid.Row="1" Background="{Binding Path=IsActive, Converter={StaticResource PaneHeaderBackgroundConverter}}"
                 BorderBrush="#FF9B9999" BorderThickness="1,1,1,0" SnapsToDevicePixels="True">
-            <TextBlock Text="{lex:LocText Connections}" Padding="2" FontWeight="Bold"/>
+            <TextBlock Text="{lex:Loc Connections}" Padding="2" FontWeight="Bold"/>
         </Border>
 
         <ListBox Grid.Row="2" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" x:Name="ConnectionList"

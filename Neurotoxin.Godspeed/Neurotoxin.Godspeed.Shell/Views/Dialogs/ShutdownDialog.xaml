@@ -31,7 +31,7 @@
                 </xctk:SplitButton.DropDownContent>
             </xctk:SplitButton>
 
-            <Button Content="{lex:LocText Cancel}" Margin="5" MinWidth="75" Command="{Binding CloseCommand}" CommandParameter="{x:Static c:Shutdown.Disabled}"/>
+            <Button Content="{lex:Loc Cancel}" Margin="5" MinWidth="75" Command="{Binding CloseCommand}" CommandParameter="{x:Static c:Shutdown.Disabled}"/>
         </StackPanel>
     </Grid>
 </primitives:DialogBase>

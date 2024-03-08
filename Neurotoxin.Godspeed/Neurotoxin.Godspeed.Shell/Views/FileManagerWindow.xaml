@@ -100,61 +100,61 @@
             </Grid.RowDefinitions>
             <Menu>
                 <MenuItem Visibility="Collapsed" />
-                <MenuItem Header="{lex:LocText FilesMenu}">
-                    <MenuItem Header="{lex:LocText Exit}" Command="{x:Static commands:FileManagerCommands.ExitCommand}" />
+                <MenuItem Header="{lex:Loc FilesMenu}">
+                    <MenuItem Header="{lex:Loc Exit}" Command="{x:Static commands:FileManagerCommands.ExitCommand}" />
                 </MenuItem>
-                <MenuItem Header="{lex:LocText ViewMenu}">
-                    <MenuItem Header="{lex:LocText SmallIcons}" IsChecked="{Binding ActivePane.IsListView}" InputGestureText="Ctrl+F1"
+                <MenuItem Header="{lex:Loc ViewMenu}">
+                    <MenuItem Header="{lex:Loc SmallIcons}" IsChecked="{Binding ActivePane.IsListView}" InputGestureText="Ctrl+F1"
                               Command="{Binding ActivePane.SetViewCommand}" CommandParameter="{x:Static constants:FileListPaneViewMode.List}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/pane_view_small_icon.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:LocText LargeIcons}" IsChecked="{Binding ActivePane.IsContentView}" InputGestureText="Ctrl+F2"
+                    <MenuItem Header="{lex:Loc LargeIcons}" IsChecked="{Binding ActivePane.IsContentView}" InputGestureText="Ctrl+F2"
                               Command="{Binding ActivePane.SetViewCommand}" CommandParameter="{x:Static constants:FileListPaneViewMode.Content}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/pane_view_large_icon.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator/>
-                    <MenuItem Header="{lex:LocText Refresh}" Command="{Binding ActivePane.RefreshCommand}" InputGestureText="Ctrl+R">
+                    <MenuItem Header="{lex:Loc Refresh}" Command="{Binding ActivePane.RefreshCommand}" InputGestureText="Ctrl+R">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/refresh.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="{lex:LocText CommandsMenu}">
-                    <MenuItem Header="{lex:LocText CalculateOccupiedSpace}" InputGestureText="Shift+Alt+Enter"
+                <MenuItem Header="{lex:Loc CommandsMenu}">
+                    <MenuItem Header="{lex:Loc CalculateOccupiedSpace}" InputGestureText="Shift+Alt+Enter"
                               Command="{Binding ActivePane.CalculateSizeCommand}" CommandParameter="{StaticResource True}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/sum.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:LocText ShowFtpLog}" Command="{Binding FtpPane.ShowFtpLogCommand}" />
+                    <MenuItem Header="{lex:Loc ShowFtpLog}" Command="{Binding FtpPane.ShowFtpLogCommand}" />
                 </MenuItem>
-                <MenuItem Header="{lex:LocText FsdMenu}" IsEnabled="{Binding FtpPane.IsFSD, FallbackValue=False}">
-                    <MenuItem Header="{lex:LocText FreestyleDatabaseCheck}" Command="{Binding FtpPane.CheckFreestyleDatabaseCommand}">
+                <MenuItem Header="{lex:Loc FsdMenu}" IsEnabled="{Binding FtpPane.IsFSD, FallbackValue=False}">
+                    <MenuItem Header="{lex:Loc FreestyleDatabaseCheck}" Command="{Binding FtpPane.CheckFreestyleDatabaseCommand}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/fsd_database_check.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:LocText StartContentScan}" Command="{Binding FtpPane.StartContentScanCommand}">
+                    <MenuItem Header="{lex:Loc StartContentScan}" Command="{Binding FtpPane.StartContentScanCommand}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/magnifier.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:LocText OpenWebUI}" Command="{Binding FtpPane.OpenWebUICommand}">
+                    <MenuItem Header="{lex:Loc OpenWebUI}" Command="{Binding FtpPane.OpenWebUICommand}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/fsd_webui.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:LocText Shutdown}" Command="{Binding FtpPane.ShutdownCommand}">
+                    <MenuItem Header="{lex:Loc Shutdown}" Command="{Binding FtpPane.ShutdownCommand}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/shutdown_xbox.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="{lex:LocText OptionsMenu}">
+                <MenuItem Header="{lex:Loc OptionsMenu}">
                     <MenuItem Header="{lex:LocText Settings, Suffix={x:Static constants:Strings.DotDotDot}}" Command="{x:Static commands:FileManagerCommands.SettingsCommand}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/cog.png" Width="16" Height="16" SnapsToDevicePixels="True" />
@@ -166,19 +166,19 @@
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="{lex:LocText HelpMenu}">
-                    <MenuItem Header="{lex:LocText OfficialGODspeedwebsite}" Command="{x:Static commands:FileManagerCommands.VisitWebsiteCommand}" CommandParameter="http://godspeed.codeplex.com">
+                <MenuItem Header="{lex:Loc HelpMenu}">
+                    <MenuItem Header="{lex:Loc OfficialGODspeedwebsite}" Command="{x:Static commands:FileManagerCommands.VisitWebsiteCommand}" CommandParameter="http://godspeed.codeplex.com">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/codeplex.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:LocText OfficialGODspeedFacebookpage}" Command="{x:Static commands:FileManagerCommands.VisitWebsiteCommand}" CommandParameter="http://www.facebook.com/godspeedftp">
+                    <MenuItem Header="{lex:Loc OfficialGODspeedFacebookpage}" Command="{x:Static commands:FileManagerCommands.VisitWebsiteCommand}" CommandParameter="http://www.facebook.com/godspeedftp">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/facebook.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:LocText UserStatisticsParticipation}" Command="{x:Static commands:FileManagerCommands.UserStatisticsParticipationCommand}" />
-                    <MenuItem Header="{lex:LocText About}" Command="{x:Static commands:FileManagerCommands.AboutCommand}">
+                    <MenuItem Header="{lex:Loc UserStatisticsParticipation}" Command="{x:Static commands:FileManagerCommands.UserStatisticsParticipationCommand}" />
+                    <MenuItem Header="{lex:Loc About}" Command="{x:Static commands:FileManagerCommands.AboutCommand}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/info.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
@@ -325,11 +325,11 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="{lex:LocText EditButton}" Command="{Binding EditCommand}" Margin="0,0,2,0" />
-                <Button Grid.Column="1" Content="{lex:LocText CopyButton}" Command="{Binding CopyCommand}" Margin="0,0,2,0" />
-                <Button Grid.Column="2" Content="{lex:LocText MoveButton}" Command="{Binding MoveCommand}" Margin="0,0,2,0" />
-                <Button Grid.Column="3" Content="{lex:LocText NewFolderButton}" Command="{Binding NewFolderCommand}" Margin="0,0,2,0" />
-                <Button Grid.Column="4" Content="{lex:LocText DeleteButton}" Command="{Binding DeleteCommand}" />
+                <Button Grid.Column="0" Content="{lex:Loc EditButton}" Command="{Binding EditCommand}" Margin="0,0,2,0" />
+                <Button Grid.Column="1" Content="{lex:Loc CopyButton}" Command="{Binding CopyCommand}" Margin="0,0,2,0" />
+                <Button Grid.Column="2" Content="{lex:Loc MoveButton}" Command="{Binding MoveCommand}" Margin="0,0,2,0" />
+                <Button Grid.Column="3" Content="{lex:Loc NewFolderButton}" Command="{Binding NewFolderCommand}" Margin="0,0,2,0" />
+                <Button Grid.Column="4" Content="{lex:Loc DeleteButton}" Command="{Binding DeleteCommand}" />
             </Grid>
         </Grid>
         <e:Interaction.Triggers>

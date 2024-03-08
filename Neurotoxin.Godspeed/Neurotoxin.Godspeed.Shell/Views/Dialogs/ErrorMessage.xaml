@@ -7,7 +7,7 @@
                        lex:LocalizeDictionary.DesignCulture="en-US"
                        lex:ResxLocalizationProvider.DefaultAssembly="Neurotoxin.Godspeed.Shell"
                        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
-                       Width="520" Topmost="True" SizeToContent="Height" Title="{lex:LocText UnhandledErrorOccurred}">
+                       Width="520" Topmost="True" SizeToContent="Height" Title="{lex:Loc UnhandledErrorOccurred}">
     <primitives:DialogBase.Resources>
         <Style TargetType="Expander">
             <Setter Property="FontWeight" Value="Bold">
@@ -34,8 +34,8 @@
         <Expander Grid.Row="1" Margin="5,0,5,5" x:Name="Details" Header="{lex:LocText Details, Suffix={x:Static constants:Strings.Colon}}"
              ContentTemplate="{StaticResource ExpanderTemplate}" />
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="{lex:LocText Report}" Margin="0,5,5,5" Click="ReportButtonClick" Width="100" />
-            <Button Content="{lex:LocText}" Margin="0,5,0,5" x:Name="Ok" Click="OkButtonClick" Width="80" />
+            <Button Content="{lex:Loc Report}" Margin="0,5,5,5" Click="ReportButtonClick" Width="100" />
+            <Button Content="{lex:Loc Ok}" Margin="0,5,0,5" x:Name="Ok" Click="OkButtonClick" Width="80" />
         </StackPanel>
     </Grid>
 </primitives:DialogBase>

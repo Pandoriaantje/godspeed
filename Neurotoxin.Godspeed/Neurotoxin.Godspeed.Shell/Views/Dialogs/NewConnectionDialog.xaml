@@ -10,7 +10,7 @@
                        lex:LocalizeDictionary.DesignCulture="en-US"
                        lex:ResxLocalizationProvider.DefaultAssembly="Neurotoxin.Godspeed.Shell"
                        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
-                       Width="500" Title="{lex:LocText ConnectionDetails}">
+                       Width="500" Title="{lex:Loc ConnectionDetails}">
     <primitives:DialogBase.Resources>
         <Style TargetType="TextBox" x:Key="TextBoxStyle">
             <Style.Triggers>
@@ -100,9 +100,9 @@
             <TextBox.Text>
                 <Binding Path="Name" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
-                        <validation:IsRequired ValidatesOnTargetUpdated="True" ErrorMessage="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:EmptyFieldErrorMessage}" />
+                        <validation:IsRequired ValidatesOnTargetUpdated="True" ErrorMessage="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:EmptyFieldErrorMessage}" />
                         <shellValidations:IsNonExistentConnection ValidatesOnTargetUpdated="True" 
-                                                                  ErrorMessage="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:ConnectionNameExistsErrorMessage}" 
+                                                                  ErrorMessage="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:ConnectionNameExistsErrorMessage}" 
                                                                   OriginalValue="{i:DataResourceBinding DataResource={StaticResource OriginalName}}"
                                                                   ItemState="{i:DataResourceBinding DataResource={StaticResource ItemState}}"
                                                                   ConnectionNames="{i:DataResourceBinding DataResource={StaticResource ConnectionNames}}"/>
@@ -127,10 +127,10 @@
                 <Binding Path="Address" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
                         <validation:IsIPv4Address ValidatesOnTargetUpdated="True" 
-                                                  EmptyErrorMessage="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:IPAddressEmptyErrorMessage}" 
-                                                  WrongFormatErrorMessage="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:IPAddressWrongFormatErrorMessage}"
-                                                  InvalidCharacterErrorMessage="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:IPAddressInvalidCharacterErrorMessage}"
-                                                  OctetOutOfRangeErrorMessage="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:IPAddressOctetOutOfRangeErrorMessage}"/>
+                                                  EmptyErrorMessage="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:IPAddressEmptyErrorMessage}" 
+                                                  WrongFormatErrorMessage="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:IPAddressWrongFormatErrorMessage}"
+                                                  InvalidCharacterErrorMessage="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:IPAddressInvalidCharacterErrorMessage}"
+                                                  OctetOutOfRangeErrorMessage="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:IPAddressOctetOutOfRangeErrorMessage}"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
@@ -142,7 +142,7 @@
             <TextBox.Text>
                 <Binding Path="Port" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
-                        <validation:IsInteger ValidatesOnTargetUpdated="True" ErrorMessage="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:IntegerErrorMessage}" />
+                        <validation:IsInteger ValidatesOnTargetUpdated="True" ErrorMessage="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:IntegerErrorMessage}" />
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
@@ -158,8 +158,8 @@
         <CheckBox Grid.Column="2" Grid.Row="4" Margin="0,0,0,15" IsChecked="{Binding UsePassiveMode}" VerticalAlignment="Center"/>
 
         <StackPanel Grid.ColumnSpan="5" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,5,0">
-            <Button Content="{lex:LocText Ok}" Width="75" Margin="0,0,5,0" Click="OkButtonClick" />
-            <Button Content="{lex:LocText Cancel}" Width="75" Click="CancelButtonClick" />
+            <Button Content="{lex:Loc Ok}" Width="75" Margin="0,0,5,0" Click="OkButtonClick" />
+            <Button Content="{lex:Loc Cancel}" Width="75" Click="CancelButtonClick" />
         </StackPanel>
     </Grid>
 </primitives:DialogBase>

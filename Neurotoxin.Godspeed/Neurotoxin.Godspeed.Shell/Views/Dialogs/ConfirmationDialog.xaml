@@ -21,8 +21,8 @@
 
         <TextBlock Grid.ColumnSpan="4" Grid.Row="0" Margin="5,0,0,5" x:Name="Message" TextWrapping="Wrap" />
 
-        <Button Grid.Column="1" Grid.Row="1" Content="{lex:LocText Yes}" Margin="5" x:Name="Ok" Click="OkButtonClick"/>
-        <Button Grid.Column="2" Grid.Row="1" Content="{lex:LocText No}" Margin="5" x:Name="Cancel" Click="CancelButtonClick"/>
+        <Button Grid.Column="1" Grid.Row="1" Content="{lex:Loc Yes}" Margin="5" x:Name="Ok" Click="OkButtonClick"/>
+        <Button Grid.Column="2" Grid.Row="1" Content="{lex:Loc No}" Margin="5" x:Name="Cancel" Click="CancelButtonClick"/>
 
     </Grid>
 </primitives:DialogBase>

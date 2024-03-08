@@ -6,7 +6,7 @@
                        lex:LocalizeDictionary.DesignCulture="en-US"
                        lex:ResxLocalizationProvider.DefaultAssembly="Neurotoxin.Godspeed.Shell"
                        lex:ResxLocalizationProvider.DefaultDictionary="Resources"                       
-                       Width="400" Title="{lex:LocText ConnectionLost}">
+                       Width="400" Title="{lex:Loc ConnectionLost}">
     <Grid x:Name="LayoutRoot">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -23,9 +23,9 @@
         <TextBlock x:Name="ErrorMessage" Grid.ColumnSpan="4" Grid.Row="0" Margin="5,5,5,10"
              TextWrapping="Wrap" />
 
-        <TextBlock Grid.ColumnSpan="4" Grid.Row="1" Margin="5,0,0,5" Text="{lex:LocText DoYouWantToReconnect}" />
+        <TextBlock Grid.ColumnSpan="4" Grid.Row="1" Margin="5,0,0,5" Text="{lex:Loc DoYouWantToReconnect}" />
 
-        <Button Grid.Column="1" Grid.Row="2" Content="{lex:LocText Yes}" Margin="5" x:Name="Reconnect" Click="OkButtonClick" />
-        <Button Grid.Column="2" Grid.Row="2" Content="{lex:LocText No}" Margin="5" x:Name="Cancel" Click="CancelButtonClick" />
+        <Button Grid.Column="1" Grid.Row="2" Content="{lex:Loc Yes}" Margin="5" x:Name="Reconnect" Click="OkButtonClick" />
+        <Button Grid.Column="2" Grid.Row="2" Content="{lex:Loc No}" Margin="5" x:Name="Cancel" Click="CancelButtonClick" />
     </Grid>
 </primitives:DialogBase>

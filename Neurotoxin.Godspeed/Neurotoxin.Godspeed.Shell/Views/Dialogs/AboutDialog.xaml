@@ -43,15 +43,15 @@
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <xctk:RichTextBox Grid.Column="0" Text="{lex:LocText CreditsContent}">
+            <xctk:RichTextBox Grid.Column="0" Text="{lex:Loc CreditsContent}">
             </xctk:RichTextBox>
-            <xctk:RichTextBox Grid.Column="2" Text="{lex:LocText GreetzContent}">
+            <xctk:RichTextBox Grid.Column="2" Text="{lex:Loc GreetzContent}">
             </xctk:RichTextBox>
         </Grid>
 
-        <xctk:RichTextBox Grid.Row="3" Margin="0,0,0,15" Text="{lex:LocText LicenseContent}" BorderThickness="0" Background="Transparent">
+        <xctk:RichTextBox Grid.Row="3" Margin="0,0,0,15" Text="{lex:Loc LicenseContent}" BorderThickness="0" Background="Transparent">
         </xctk:RichTextBox>
 
-        <Button Grid.Row="4" Content="{lex:LocText Close}" Width="75" x:Name="Ok" Click="OkButtonClick"/>
+        <Button Grid.Row="4" Content="{lex:Loc Close}" Width="75" x:Name="Ok" Click="OkButtonClick"/>
     </Grid>
 </primitives:DialogBase>

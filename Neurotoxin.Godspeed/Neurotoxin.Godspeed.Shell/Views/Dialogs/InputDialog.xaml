@@ -46,8 +46,8 @@
         </ItemsControl>
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Content="{lex:LocText Ok}" Margin="5" MinWidth="75" Click="OkButtonClick"/>
-            <Button Content="{lex:LocText Cancel}" Margin="5" MinWidth="75" Click="CancelButtonClick"/>
+            <Button Content="{lex:Loc Ok}" Margin="5" MinWidth="75" Click="OkButtonClick"/>
+            <Button Content="{lex:Loc Cancel}" Margin="5" MinWidth="75" Click="CancelButtonClick"/>
         </StackPanel>
 
     </Grid>

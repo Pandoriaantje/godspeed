@@ -96,7 +96,7 @@
     <DataGrid.Columns>
         <DataGridTemplateColumn Header="{Binding Source={StaticResource ViewModel}, Path=Data.TitleColumnHeader}" SortMemberPath="ComputedName" Width="*" IsReadOnly="True"
                                 CellEditingTemplateSelector="{StaticResource CellEditingTemplateSelector}" CellTemplateSelector="{StaticResource TitleCellTemplateSelector}"/>
-        <DataGridTextColumn Header="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:Size}" SortMemberPath="ComputedSize" Width="80" IsReadOnly="True">
+        <DataGridTextColumn Header="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:Size}" SortMemberPath="ComputedSize" Width="80" IsReadOnly="True">
             <DataGridTextColumn.Binding>
                 <co:SizeConverter ConverterParameter="{x:Static constants:SizeConverterParameter.ListView}"/>
             </DataGridTextColumn.Binding>
@@ -117,8 +117,8 @@
                 </Style>
             </DataGridTextColumn.ElementStyle>
         </DataGridTextColumn>
-        <DataGridTextColumn Binding="{Binding Path=Date, StringFormat={lex:LocText Neurotoxin.Godspeed.Shell:Resources:DateTimeFormat}}"
-                            Header="{lex:LocText Neurotoxin.Godspeed.Shell:Resources:Date}" SortMemberPath="Date" Width="100" IsReadOnly="True">
+        <DataGridTextColumn Binding="{Binding Path=Date, StringFormat={lex:Loc Neurotoxin.Godspeed.Shell:Resources:DateTimeFormat}}"
+                            Header="{lex:Loc Neurotoxin.Godspeed.Shell:Resources:Date}" SortMemberPath="Date" Width="100" IsReadOnly="True">
             <DataGridTextColumn.ElementStyle>
                 <Style TargetType="TextBlock">
                     <Setter Property="HorizontalAlignment" Value="Right" />

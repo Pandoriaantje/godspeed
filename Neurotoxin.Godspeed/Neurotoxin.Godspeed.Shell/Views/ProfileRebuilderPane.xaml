@@ -126,12 +126,12 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="0,2,0,5" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="{lex:LocText Close}" Command="{Binding CloseCommand}" MinWidth="60" Padding="10,0,10,0" />
+            <Button Content="{lex:Loc Close}" Command="{Binding CloseCommand}" MinWidth="60" Padding="10,0,10,0" />
         </StackPanel>
 
         <Border Grid.Row="1" Background="{Binding Path=IsActive, Converter={StaticResource PaneHeaderBackgroundConverter}}"
              BorderBrush="#FF9B9999" BorderThickness="1,1,1,0" SnapsToDevicePixels="True">
-            <TextBlock Text="{lex:LocText ProfileRebuilder}" Padding="2" FontWeight="Bold" />
+            <TextBlock Text="{lex:Loc ProfileRebuilder}" Padding="2" FontWeight="Bold" />
         </Border>
         
         <TabControl Grid.Row="2" 

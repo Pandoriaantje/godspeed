@@ -81,6 +81,7 @@
                     <MultiBinding StringFormat="{x:Static dialogs:TransferProgressDialog.BytesFormat}">
                         <Binding Path="BytesTransferred" />
                         <Binding Path="TotalBytes" />
+                        <Binding Path="Size" />
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
@@ -133,12 +134,12 @@
                     </StackPanel>
                 </xctk:DropDownButton.DropDownContent>
             </xctk:DropDownButton>-->
-            <Button Width="75" Content="{lex:LocText Pause}" Command="{Binding PauseCommand}" Margin="0,0,5,0" 
+            <Button Width="75" Content="{lex:Loc Pause}" Command="{Binding PauseCommand}" Margin="0,0,5,0" 
                     Visibility="{Binding Path=IsPaused, Converter={StaticResource BoolToVis}, ConverterParameter=True}" 
                     IsEnabled="{Binding Path=IsResumeSupported}" />
-            <Button Width="75" Content="{lex:LocText Continue}" Command="{Binding ContinueCommand}" Margin="0,0,5,0" 
+            <Button Width="75" Content="{lex:Loc Continue}" Command="{Binding ContinueCommand}" Margin="0,0,5,0" 
                     Visibility="{Binding Path=IsPaused, Converter={StaticResource BoolToVis}}" />
-            <Button Width="75" Content="{lex:LocText}" Click="CancelButtonClick" x:Name="Abort" />
+            <Button Width="75" Content="{lex:Loc}" Click="CancelButtonClick" x:Name="Abort" />
         </StackPanel>
     </Grid>
 </primitives:DialogBase>

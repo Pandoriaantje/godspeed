@@ -18,10 +18,10 @@
         <TextBlock Grid.Row="1" Margin="5,0,0,15" TextWrapping="Wrap" Text="{lex:Loc DoYouWantToDeleteItWithAll}" />
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="{lex:LocText Delete}" Margin="5" x:Name="Delete" MinWidth="75" Click="OkButtonClick"/>
-            <Button Content="{lex:LocText DeleteAll}" Margin="5" x:Name="All" MinWidth="75" Click="OkButtonClick"/>
-            <Button Content="{lex:LocText Skip}" Margin="5" x:Name="Skip" MinWidth="75" Click="OkButtonClick"/>
-            <Button Content="{lex:LocText Cancel}" Margin="5" x:Name="Cancel" MinWidth="75" Click="CancelButtonClick"/>
+            <Button Content="{lex:Loc Delete}" Margin="5" x:Name="Delete" MinWidth="75" Click="OkButtonClick"/>
+            <Button Content="{lex:Loc DeleteAll}" Margin="5" x:Name="All" MinWidth="75" Click="OkButtonClick"/>
+            <Button Content="{lex:Loc Skip}" Margin="5" x:Name="Skip" MinWidth="75" Click="OkButtonClick"/>
+            <Button Content="{lex:Loc Cancel}" Margin="5" x:Name="Cancel" MinWidth="75" Click="CancelButtonClick"/>
         </StackPanel>
     </Grid>
 </primitives:DialogBase>

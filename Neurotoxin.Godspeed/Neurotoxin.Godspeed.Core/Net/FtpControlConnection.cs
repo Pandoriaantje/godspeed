@@ -171,7 +171,7 @@ namespace Neurotoxin.Godspeed.Core.Net
 
         public void Close()
         {
-            _streamReader.Close();
+            _streamReader?.Close();
         }
 
         public void Dispose()
