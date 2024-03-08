@@ -162,10 +162,10 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             App.DataDirectory = string.Format(@"{0}\{1}\{2}\{3}", appData, company, product, version);
             if (!Directory.Exists(App.DataDirectory))
             {
-                var v11 = string.Format(@"{0}\{1}\{2}\1.1", appData, company, product);
-                if (Directory.Exists(v11))
+                var v12 = string.Format(@"{0}\{1}\{2}\1.2", appData, company, product);
+                if (Directory.Exists(v12))
                 {
-                    Directory.Move(v11, App.DataDirectory);
+                    Directory.Move(v12, App.DataDirectory);
                 }
                 else
                 {

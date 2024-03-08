@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>Прервать</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>О программе</value>
@@ -365,19 +365,19 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Disable notification sound</value>
   </data>
   <data name="DisableOptionAll" xml:space="preserve">
-    <value>For all connection</value>
+    <value>Для всех соединений</value>
   </data>
   <data name="DisableOptionNone" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="DisableOptionSingle" xml:space="preserve">
-    <value>For this connection only</value>
+    <value>Только для этого соединения</value>
   </data>
   <data name="Disc" xml:space="preserve">
     <value>Диск</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Отключиться</value>
   </data>
   <data name="DontShowThisMessageAgain" xml:space="preserve">
     <value>Don't show this message again</value>
@@ -404,7 +404,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Drive change failed</value>
   </data>
   <data name="DriveIsNotAccessible" xml:space="preserve">
-    <value>{0} is not accessible.</value>
+    <value>{0} не доступен.</value>
   </data>
   <data name="DriveNotFound" xml:space="preserve">
     <value>Drive not found</value>
@@ -425,7 +425,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Выход</value>
   </data>
   <data name="Extract" xml:space="preserve">
-    <value>Extract</value>
+    <value>Извлечь</value>
   </data>
   <data name="FacebookMessage" xml:space="preserve">
     <value>&lt;b&gt;Do you like GODspeed?&lt;/b&gt; Do you want to get news about it first hand, share your ideas and/or be a part of its growing community? Then please like its Facebook page!</value>
@@ -488,7 +488,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>File hash verification failed. No space left on device?</value>
   </data>
   <data name="FTPLog" xml:space="preserve">
-    <value>FTP Log</value>
+    <value>FTP Лог</value>
   </data>
   <data name="FtpTraceWindowTitle" xml:space="preserve">
     <value>FTP Log of {0}</value>
@@ -671,7 +671,7 @@ It will automatically close the FTP connection.</value>
     <value>Media ID</value>
   </data>
   <data name="Messages" xml:space="preserve">
-    <value>Messages</value>
+    <value>Сообщения</value>
   </data>
   <data name="MigrationProgressDialogTitle" xml:space="preserve">
     <value>Migration</value>
@@ -737,10 +737,10 @@ It will automatically close the FTP connection.</value>
     <value>Новый Title</value>
   </data>
   <data name="NewTitleFoundPlural" xml:space="preserve">
-    <value>{0} new titles found.</value>
+    <value>{0} новых titles найдено.</value>
   </data>
   <data name="NewTitleFoundSingular" xml:space="preserve">
-    <value>{0} new title found.</value>
+    <value>{0} новый title найден.</value>
   </data>
   <data name="NewVersionAvailableMessage" xml:space="preserve">
     <value>&lt;b&gt;New version available! ({0})&lt;/b&gt;&lt;br/&gt;Click here to download it now!</value>
@@ -1229,7 +1229,7 @@ It will automatically close the FTP connection.</value>
     <value>An error occurred while updating. Please try again later, and if you still have trouble, report error.</value>
   </data>
   <data name="Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>Загрузка</value>
   </data>
   <data name="UrlCannotBeOpened" xml:space="preserve">
     <value>URL cannot be opened (Reason: {0})</value>
