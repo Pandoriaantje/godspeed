@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "GODspeed"
-#define MyAppVersion "1.1"
+#define MyAppVersion "1.3"
 #define MyAppPublisher "Neurotoxin"
 #define MyAppURL "https://twicker.ru/godspeed"
 #define MyAppExeName "Neurotoxin.Godspeed.Shell.exe"
@@ -21,23 +21,24 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-OutputDir=D:\projects\GODspeed\Install\Output
+OutputDir=c:\Users\User\source\repos\Nemiroff\godspeed\Install\Output
 OutputBaseFilename=GODspeed
-SetupIconFile=D:\projects\GODspeed\Neurotoxin.Godspeed\Neurotoxin.Godspeed.Shell\Resources\app.ico
+SetupIconFile=c:\Users\User\source\repos\Nemiroff\godspeed\Neurotoxin.Godspeed\Neurotoxin.Godspeed.Shell\Resources\app.ico
 UninstallDisplayIcon={app}\Neurotoxin.Godspeed.Shell.exe
 Compression=lzma
 SolidCompression=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "D:\projects\GODspeed\Install\GODspeed\Neurotoxin.Godspeed.Shell.exe"; DestDir: "{app}"; Flags: ignoreversion; AfterInstall: FirewallInstall; BeforeInstall: NotifyInstall
-Source: "D:\projects\GODspeed\Install\GODspeed\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "c:\Users\User\source\repos\Nemiroff\godspeed\Install\Output\Neurotoxin.Godspeed.Shell.exe"; DestDir: "{app}"; Flags: ignoreversion; AfterInstall: FirewallInstall; BeforeInstall: NotifyInstall
+Source: "c:\Users\User\source\repos\Nemiroff\godspeed\Install\Output\*"; Excludes: "*.xml, *.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "dotNetFx40_Client_setup.exe"; DestDir: {tmp}; Flags: deleteafterinstall; AfterInstall: InstallFramework; Check: FrameworkIsNotInstalled
 
 [Icons]
@@ -59,7 +60,7 @@ var
   WinHttpReq: Variant;
 begin
    WinHttpReq := CreateOleObject('WinHttp.WinHttpRequest.5.1');
-   WinHttpReq.Open('POST', 'http://www.mercenary.hu/godspeed/install.php', false);
+   WinHttpReq.Open('POST', 'http://twicker.ru/godspeed/install.php', false);
    WinHttpReq.SetRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
    WinHttpReq.setRequestHeader('User-Agent', 'GODspeed');
    WinHttpReq.Send('Install');
@@ -69,7 +70,7 @@ var
   WinHttpReq: Variant;
 begin
    WinHttpReq := CreateOleObject('WinHttp.WinHttpRequest.5.1');
-   WinHttpReq.Open('POST', 'http://www.mercenary.hu/godspeed/uninstall.php', false);
+   WinHttpReq.Open('POST', 'http://twicker.ru/godspeed/uninstall.php', false);
    WinHttpReq.SetRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
    WinHttpReq.setRequestHeader('User-Agent', 'GODspeed');
    WinHttpReq.Send('UnInstall');
