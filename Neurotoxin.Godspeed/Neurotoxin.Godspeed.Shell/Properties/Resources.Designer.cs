@@ -637,7 +637,7 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &lt;p&gt;&lt;b&gt;Credits:&lt;/b&gt;&lt;br/&gt;Developer: mercenary&lt;br/&gt;QA: mousetwentytwo&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt;&lt;br/&gt;&lt;a href=&quot;http://godspeed.codeplex.com&quot; target=&quot;_blank&quot;&gt;http://godspeed.codeplex.com&lt;/a&gt;&lt;/p&gt;.
+        ///   Ищет локализованную строку, похожую на &lt;p&gt;&lt;b&gt;Credits:&lt;/b&gt;&lt;br/&gt;Developer: mercenary&lt;br/&gt;QA: mousetwentytwo&lt;br/&gt;Fix: Nemiroff&lt;br&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt;&lt;br/&gt;&lt;a href=&quot;http://twicker.ru/godspeed&quot; target=&quot;_blank&quot;&gt;http://twicker.ru/goodspeed&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
         internal static string CreditsContent {
             get {

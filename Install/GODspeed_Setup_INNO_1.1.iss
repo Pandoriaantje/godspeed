@@ -4,7 +4,7 @@
 #define MyAppName "GODspeed"
 #define MyAppVersion "1.1"
 #define MyAppPublisher "Neurotoxin"
-#define MyAppURL "https://www.facebook.com/godspeedftp"
+#define MyAppURL "https://twicker.ru/godspeed"
 #define MyAppExeName "Neurotoxin.Godspeed.Shell.exe"
 
 [Setup]

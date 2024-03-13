@@ -64,5 +64,10 @@ namespace Neurotoxin.Godspeed.Shell.Views.Dialogs
         {
             Process.Start(e.Uri.ToString());
         }
+
+        private void RichTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }

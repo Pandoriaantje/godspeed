@@ -43,7 +43,7 @@
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <xctk:RichTextBox Grid.Column="0" Text="{lex:Loc CreditsContent}">
+            <xctk:RichTextBox Grid.Column="0" Text="{lex:Loc CreditsContent}" TextChanged="RichTextBox_TextChanged">
             </xctk:RichTextBox>
             <xctk:RichTextBox Grid.Column="2" Text="{lex:Loc GreetzContent}">
             </xctk:RichTextBox>

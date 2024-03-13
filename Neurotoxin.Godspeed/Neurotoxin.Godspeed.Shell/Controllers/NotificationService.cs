@@ -18,13 +18,9 @@ namespace Neurotoxin.Godspeed.Shell.Controllers
     public class NotificationService
     {
         private const string PARTICIPATIONMESSAGEKEY = "ParticipationMessage";
-        //private const string FACEBOOKMESSAGEKEY = "FacebookMessage";
-        //private const string CODEPLEXMESSAGEKEY = "CodeplexMessage";
         private const string NEWVERSIONAVAILABLEMESSAGEKEY = "NewVersionAvailableMessage";
 
         private Timer _participationTimer;
-        //private Timer _facebookTimer;
-        //private Timer _codeplexTimer;
 
         private readonly Queue<NotifyUserMessageEventArgs> _messageQueue = new Queue<NotifyUserMessageEventArgs>();
 
@@ -57,14 +53,6 @@ namespace Neurotoxin.Godspeed.Shell.Controllers
             {
                 _participationTimer = new Timer(ParticipationMessage, null, 60000, -1);
             }
-            //if (!_userSettings.IsMessageIgnored(FACEBOOKMESSAGEKEY))
-            //{
-            //    _facebookTimer = new Timer(FacebookMessage, null, 600000, -1);
-            //}
-            //if (!_userSettings.IsMessageIgnored(CODEPLEXMESSAGEKEY) && _statistics.ApplicationStarted > 9 && _statistics.TotalUsageTime > new TimeSpan(0, 2, 0, 0))
-            //{
-            //    _codeplexTimer = new Timer(CodeplexMessage, null, 60000, -1);
-            //}
         }
 
         private void CheckForNewerVersion()
@@ -97,20 +85,6 @@ namespace Neurotoxin.Godspeed.Shell.Controllers
             var args = new NotifyUserMessageEventArgs(PARTICIPATIONMESSAGEKEY, MessageIcon.Info, MessageCommand.OpenDialog, typeof(UserStatisticsParticipationDialog));
             _eventAggregator.GetEvent<NotifyUserMessageEvent>().Publish(args);
         }
-
-        //private void FacebookMessage(object state)
-        //{
-        //    _facebookTimer.Dispose();
-        //    var args = new NotifyUserMessageEventArgs(FACEBOOKMESSAGEKEY, MessageIcon.Info, MessageCommand.OpenUrl, "http://www.facebook.com/godspeedftp", MessageFlags.Ignorable | MessageFlags.IgnoreAfterOpen);
-        //    _eventAggregator.GetEvent<NotifyUserMessageEvent>().Publish(args);
-        //}
-
-        //private void CodeplexMessage(object state)
-        //{
-        //    _codeplexTimer.Dispose();
-        //    var args = new NotifyUserMessageEventArgs(CODEPLEXMESSAGEKEY, MessageIcon.Info, MessageCommand.OpenUrl, "http://godspeed.codeplex.com", MessageFlags.Ignorable | MessageFlags.IgnoreAfterOpen);
-        //    _eventAggregator.GetEvent<NotifyUserMessageEvent>().Publish(args);
-        //}
 
         public void QueueMessage(NotifyUserMessageEventArgs message)
         {

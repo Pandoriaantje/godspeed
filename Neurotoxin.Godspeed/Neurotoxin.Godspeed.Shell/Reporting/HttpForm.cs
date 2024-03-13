@@ -10,7 +10,7 @@ namespace Neurotoxin.Godspeed.Shell.Reporting
     public static class HttpForm
     {
         private const string Boundary = "----GODSpeedFormBoundary";
-        private const string UrlBase = "http://www.mercenary.hu/godspeed/";
+        private const string UrlBase = "http://twicker.ru/godspeed/";
         private const string UserAgent = "GODspeed";
         private const string ContentType = "multipart/form-data; boundary=" + Boundary;
 
