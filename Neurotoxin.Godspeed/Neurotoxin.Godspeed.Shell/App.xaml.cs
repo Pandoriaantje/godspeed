@@ -120,7 +120,6 @@ namespace Neurotoxin.Godspeed.Shell
                 var userSettings = _bootstrapper.Container.Resolve<IUserSettingsProvider>();
                 userSettings.PersistData();
 
-                //TODO: Better detection
                 if (!Debugger.IsAttached && userSettings.DisableUserStatisticsParticipation != true)
                 {
                     var commandUsage = new StringBuilder();
@@ -134,33 +133,6 @@ namespace Neurotoxin.Godspeed.Shell
                     {
                         serverUsage.AppendLine(string.Format("{0}={1}", kvp.Key, kvp.Value));
                     }
-
-                    var utcOffset = TimeZone.CurrentTimeZone.GetUtcOffset(statistics.UsageStart);
-                    HttpForm.Post("stats.php", new List<IFormData>
-                        {
-                            new RawPostData("client_id", userSettings.ClientId),
-                            new RawPostData("version", ApplicationVersion),
-                            new RawPostData("wpf", FrameworkVersion),
-                            new RawPostData("os", Environment.OSVersion.VersionString),
-                            new RawPostData("culture", CultureInfo.CurrentCulture.Name),
-                            new RawPostData("uiculture", CultureInfo.CurrentUICulture.Name),
-                            new RawPostData("osculture", CultureInfo.InstalledUICulture.Name),
-                            new RawPostData("date", statistics.UsageStart.ToUnixTimestamp()),
-                            new RawPostData("timezone", string.Format("{0}{1:D2}:{2:D2}", utcOffset.Hours >= 0 ? "+" : string.Empty, utcOffset.Hours, utcOffset.Minutes)),
-                            new RawPostData("usage", Math.Floor(statistics.UsageTime.TotalSeconds)),
-                            new RawPostData("exit_code", e.ApplicationExitCode),
-                            new RawPostData("games_recognized", statistics.GamesRecognizedFully),
-                            new RawPostData("partially_recognized", statistics.GamesRecognizedPartially),
-                            new RawPostData("svod_recognized", statistics.SvodPackagesRecognized),
-                            new RawPostData("stfs_recognized", statistics.StfsPackagesRecognized),
-                            new RawPostData("transferred_bytes", statistics.BytesTransferred),
-                            new RawPostData("transferred_files", statistics.FilesTransferred),
-                            new RawPostData("transfer_time", Math.Floor(statistics.TimeSpentWithTransfer.TotalSeconds)),
-                            new RawPostData("command_usage", commandUsage),
-                            new RawPostData("server_usage", serverUsage),
-                            new RawPostData("successful_update", statistics.SuccessfulUpdate),
-                            new RawPostData("unsuccessful_update", statistics.UnsuccessfulUpdate),
-                        });
                 }
             }
             base.OnExit(e);

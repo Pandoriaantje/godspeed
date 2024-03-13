@@ -17,22 +17,17 @@ namespace Neurotoxin.Godspeed.Shell.Controllers
 {
     public class NotificationService
     {
-        private const string PARTICIPATIONMESSAGEKEY = "ParticipationMessage";
         private const string NEWVERSIONAVAILABLEMESSAGEKEY = "NewVersionAvailableMessage";
-
-        private Timer _participationTimer;
 
         private readonly Queue<NotifyUserMessageEventArgs> _messageQueue = new Queue<NotifyUserMessageEventArgs>();
 
         private readonly IEventAggregator _eventAggregator;
-        private readonly IStatisticsViewModel _statistics;
         private readonly IUserSettingsProvider _userSettings;
         private readonly IWorkHandler _workHandler;
 
         public NotificationService(IEventAggregator eventAggregator, IStatisticsViewModel statistics, IUserSettingsProvider userSettings, IWorkHandler workHandler)
         {
             _eventAggregator = eventAggregator;
-            _statistics = statistics;
             _userSettings = userSettings;
             _workHandler = workHandler;
 
@@ -48,10 +43,6 @@ namespace Neurotoxin.Godspeed.Shell.Controllers
             if (_userSettings.UseVersionChecker)
             {
                 CheckForNewerVersion();
-            }
-            if (!_userSettings.DisableUserStatisticsParticipation.HasValue)
-            {
-                _participationTimer = new Timer(ParticipationMessage, null, 60000, -1);
             }
         }
 
@@ -77,13 +68,6 @@ namespace Neurotoxin.Godspeed.Shell.Controllers
                     _eventAggregator.GetEvent<NotifyUserMessageEvent>().Publish(args);
                 });
             }
-        }
-
-        private void ParticipationMessage(object state)
-        {
-            _participationTimer.Dispose();
-            var args = new NotifyUserMessageEventArgs(PARTICIPATIONMESSAGEKEY, MessageIcon.Info, MessageCommand.OpenDialog, typeof(UserStatisticsParticipationDialog));
-            _eventAggregator.GetEvent<NotifyUserMessageEvent>().Publish(args);
         }
 
         public void QueueMessage(NotifyUserMessageEventArgs message)

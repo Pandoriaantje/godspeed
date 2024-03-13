@@ -954,7 +954,8 @@
     </ItemGroup>
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)\Install\NauFeedBuilder\FeedBuilder.exe" "$(SolutionDir)\Install\FeedBuilder_Release.config" -Build -OpenOutputs</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>copy $(SolutionDir)..\Libraries\Xcompress\*.* $(TargetDir) /Y

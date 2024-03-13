@@ -167,17 +167,11 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="{lex:Loc HelpMenu}">
-                    <MenuItem Header="{lex:Loc OfficialGODspeedwebsite}" Command="{x:Static commands:FileManagerCommands.VisitWebsiteCommand}" CommandParameter="http://godspeed.codeplex.com">
+                    <MenuItem Header="{lex:Loc OfficialGODspeedwebsite}" Command="{x:Static commands:FileManagerCommands.VisitWebsiteCommand}" CommandParameter="http://twicker.ru/godspeed">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/codeplex.png" Width="16" Height="16" SnapsToDevicePixels="True" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="{lex:Loc OfficialGODspeedFacebookpage}" Command="{x:Static commands:FileManagerCommands.VisitWebsiteCommand}" CommandParameter="http://www.facebook.com/godspeedftp">
-                        <MenuItem.Icon>
-                            <controls:GreyableImage Source="/Resources/facebook.png" Width="16" Height="16" SnapsToDevicePixels="True" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{lex:Loc UserStatisticsParticipation}" Command="{x:Static commands:FileManagerCommands.UserStatisticsParticipationCommand}" />
                     <MenuItem Header="{lex:Loc About}" Command="{x:Static commands:FileManagerCommands.AboutCommand}">
                         <MenuItem.Icon>
                             <controls:GreyableImage Source="/Resources/info.png" Width="16" Height="16" SnapsToDevicePixels="True" />
