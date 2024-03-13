@@ -1067,7 +1067,7 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Debugger.Break();
                 }

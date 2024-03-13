@@ -5,10 +5,12 @@ using System.Linq;
 using Neurotoxin.Godspeed.Core.Models;
 using Neurotoxin.Godspeed.Shell.Constants;
 using Neurotoxin.Godspeed.Shell.Models;
-using SharpCompress.Archive;
-using SharpCompress.Archive.Rar;
-using SharpCompress.Archive.SevenZip;
+using SharpCompress.Archives;
+using SharpCompress.Archives.Rar;
+using SharpCompress.Archives.SevenZip;
 using SharpCompress.Common;
+using SharpCompress.IO;
+using SharpCompress.Readers;
 
 namespace Neurotoxin.Godspeed.Shell.ContentProviders
 {
@@ -57,7 +59,7 @@ namespace Neurotoxin.Godspeed.Shell.ContentProviders
                                    entry.ArchivedTime ??
                                    DateTime.MinValue);
 
-            return CreateModel(entry.FilePath, 
+            return CreateModel(entry.Key, 
                                entry.IsDirectory,
                                date,
                                entry.IsDirectory ? (long?) null : entry.Size);
@@ -124,7 +126,7 @@ namespace Neurotoxin.Godspeed.Shell.ContentProviders
         public override Stream GetStream(string path, FileMode mode, FileAccess access, long startPosition)
         {
             if (access != FileAccess.Read) throw new ArgumentException("Write is not supported");
-            var stream = _archive.Entries.First(e => e.FilePath == path).OpenEntryStream();
+            var stream = _archive.Entries.First(e => e.Key == path).OpenEntryStream();
             if (startPosition != 0) stream.Seek(startPosition, SeekOrigin.Begin);
             return stream;
         }
@@ -146,7 +148,7 @@ namespace Neurotoxin.Godspeed.Shell.ContentProviders
                 Thumbnail = ResourceManager.GetContentByteArray("/Resources/Items/16x16/package.png")
             };
 
-            _archive = ArchiveFactory.Open(path, Options.LookForHeader);
+            _archive = ArchiveFactory.Open(path, new ReaderOptions() { LookForHeader = true, LeaveStreamOpen=true});
             var isRar = _archive is RarArchive;
             Slash = isRar ? BACKSLASH : SLASH;
             _fileStructure = new Tree<FileSystemItem> {Content = _drive};
@@ -161,11 +163,15 @@ namespace Neurotoxin.Godspeed.Shell.ContentProviders
                 {
                     throw new PasswordProtectedException("Archive is corrupt or password protected!", ex);
                 }
+                //catch(InvalidFormatException ex)
+                //{
+                //    throw new PasswordProtectedException("Unknown format (or RAR5)", ex);
+                //}
             }
             
-            foreach (var entry in _archive.Entries.OrderBy(e => e.FilePath))
+            foreach (var entry in _archive.Entries.OrderBy(e => e.Key))
             {
-                var entryPath = entry.FilePath;
+                var entryPath = entry.Key;
                 if (isRar) entryPath += BACKSLASH;
                 _fileStructure.Insert(entryPath, CreateModel(entry), name => CreateModel(name, true, DateTime.MinValue, null));
             }

@@ -122,6 +122,7 @@ namespace Neurotoxin.Godspeed.Core.Net
         public bool ReadRawLine(out string raw)
         {
             raw = ReadRawLine();
+            if(raw == null) return true;
             var line = raw.Trim().ToUpper();
             return line.EndsWith("END") || line.StartsWith("220 ");
         }
