@@ -19,6 +19,7 @@ using Neurotoxin.Godspeed.Shell.Extensions;
 using Neurotoxin.Godspeed.Shell.Interfaces;
 using Neurotoxin.Godspeed.Shell.Models;
 using Resx = Neurotoxin.Godspeed.Shell.Properties.Resources;
+using Neurotoxin.Godspeed.Core.Constants;
 
 namespace Neurotoxin.Godspeed.Shell.ViewModels
 {
@@ -294,20 +295,24 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
         private void OnUsbDeviceChanged(UsbDeviceChangedEventArgs e)
         {
             var drives = FileManager.GetDrives();
-            for (var i = 0; i < drives.Count; i++)
+
+            if (drives.Count < Drives.Count || e.Change == UsbDeviceChange.Removed)
             {
-                var current = drives[i];
-                if (i < Drives.Count && current.Name == Drives[i].Name) continue;
-                if (i < Drives.Count && Drives.Any(d => d.Name == current.Name))
+                for (int i = 0; i < Drives.Count; i++)
                 {
-                    var existing = Drives[i];
-                    if (Drive.Name == existing.Name)
+                    var current = Drives[i];
+                    if (drives.Any(d => d.Name == current.Name)) continue;
+                    if (Drive.Name == current.Name)
                         Drive = GetDefaultDrive();
-                    Drives.Remove(existing);
-                } 
-                else
+                    Drives.Remove(current);
+                }
+            }
+            else if (e.Change == UsbDeviceChange.Inserted)
+            {
+                for (var i = 0; i < drives.Count; i++)
                 {
-                    Drives.Insert(i, new FileSystemItemViewModel(current));
+                    if (i < Drives.Count && drives[i].Name == Drives[i].Name) continue;
+                    Drives.Insert(i, new FileSystemItemViewModel(drives[i]));
                 }
             }
         }
