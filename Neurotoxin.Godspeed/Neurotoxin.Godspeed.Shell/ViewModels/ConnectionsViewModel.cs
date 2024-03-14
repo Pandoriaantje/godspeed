@@ -89,6 +89,12 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             {
                 ConnectedFtp = FtpConnect(SelectedItem);
             }
+            else if (SelectedItem is FilePanelPlaceholderViewModel)
+            {
+                var pane = Container.Resolve<LocalFileSystemContentViewModel>();
+                pane.LoadDataAsync(LoadCommand.Load, new LoadDataAsyncParameters(Settings.Clone("/")), null, null);
+                EventAggregator.GetEvent<OpenNestedPaneEvent>().Publish(new OpenNestedPaneEventArgs(this, pane));
+            }
         }
 
         #endregion
@@ -115,6 +121,8 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
                     }
                     var add = new NewConnectionPlaceholderViewModel();
                     Items.Add(add);
+                    var filePanel = new FilePanelPlaceholderViewModel();
+                    Items.Add(filePanel);
                     break;
                 case LoadCommand.Restore:
                     Save(cmdParam.Payload as FtpConnectionItemViewModel);

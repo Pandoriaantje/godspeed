@@ -297,6 +297,7 @@
     <Compile Include="Models\F3PluginGetProfileInfo.cs" />
     <Compile Include="Models\FsdContentItemCells.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ViewModels\FilePanelPlaceholderViewModel.cs" />
     <Compile Include="ViewModels\GodConversionSettingsViewModel.cs" />
     <Compile Include="Models\OpenIsoPayload.cs" />
     <Compile Include="Models\TransferInitializationResult.cs" />
