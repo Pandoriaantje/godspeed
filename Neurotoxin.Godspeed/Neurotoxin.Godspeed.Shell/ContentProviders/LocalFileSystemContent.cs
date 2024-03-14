@@ -62,6 +62,14 @@ namespace Neurotoxin.Godspeed.Shell.ContentProviders
                 };
                 result.Add(item);
             }
+            result.Add(new FileSystemItem
+            {
+                Path = "FTP:",
+                FullPath = "FTP://",
+                Name = "FTP:",
+                Type = ItemType.Panel,
+                DriveType = DriveType.NoRootDirectory
+            });
             return result;
         }
 

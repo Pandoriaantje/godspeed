@@ -34,6 +34,7 @@ using Neurotoxin.Godspeed.Core.Extensions;
 using ServiceStack.OrmLite;
 using Resx = Neurotoxin.Godspeed.Shell.Properties.Resources;
 using Neurotoxin.Godspeed.Presentation.Converters;
+using Neurotoxin.Godspeed.Shell.ContentProviders;
 
 namespace Neurotoxin.Godspeed.Shell.ViewModels
 {
@@ -96,8 +97,7 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             set
             {
                 //TODO: refactor this setter
-
-                if (IsDriveAccessible(value))
+                if (IsDriveAccessible(value) || value.Type == ItemType.Panel)
                 {
                     if (CurrentFolder != null && _drive != value) PathCache[_drive] = CurrentFolder.Path;
                     _drive = value;
@@ -585,6 +585,50 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
         }
 
         private void OpenStfsPackageError(PaneViewModelBase pane, Exception exception)
+        {
+            IsBusy = false;
+            WindowManager.ShowMessage(Resx.OpenFailed, string.Format("{0}: {1}", string.Format(Resx.CantOpenFile, CurrentRow.ComputedName), exception.Message));
+        }
+
+        #endregion
+
+        #region OpenPanelCommand
+        public DelegateCommand OpenPanelCommand { get; private set; }
+
+        protected virtual bool CanExecuteOpenPanelCommand()
+        {
+            return Drive != null && Drive.Type == ItemType.Panel;
+        }
+
+        private void ExecuteOpenPanelCommand()
+        {
+            ProgressMessage = string.Format("{0}", Resx.ChangingDirectory);
+            IsBusy = true;
+            OpenPanel(Drive.FullPath);
+        }
+
+        private void OpenPanel(string path)
+        {
+            switch (path)
+            {
+                case "FTP://":
+                    var ftpPane = Container.Resolve<ConnectionsViewModel>();
+                    ftpPane.LoadDataAsync(LoadCommand.Load, new LoadDataAsyncParameters(Settings.Clone("/"), path), OpenPanelSuccess, OpenPanelError);
+                    break;
+                default:
+
+                    break;
+
+            }
+        }
+
+        private void OpenPanelSuccess(PaneViewModelBase pane)
+        {
+            IsBusy = false;
+            EventAggregator.GetEvent<OpenNestedPaneEvent>().Publish(new OpenNestedPaneEventArgs(this, pane));
+        }
+
+        private void OpenPanelError(PaneViewModelBase pane, Exception exception)
         {
             IsBusy = false;
             WindowManager.ShowMessage(Resx.OpenFailed, string.Format("{0}: {1}", string.Format(Resx.CantOpenFile, CurrentRow.ComputedName), exception.Message));
@@ -1268,6 +1312,7 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             ChangeDirectoryCommand = new DelegateCommand<object>(ExecuteChangeDirectoryCommand, CanExecuteChangeDirectoryCommand);
             OpenStfsPackageCommand = new DelegateCommand<OpenStfsPackageMode>(ExecuteOpenStfsPackageCommand, CanExecuteOpenStfsPackageCommand);
             OpenCompressedFileCommand = new DelegateCommand(ExecuteOpenCompressedFileCommand, CanExecuteOpenCompressedFileCommand);
+            OpenPanelCommand = new DelegateCommand(ExecuteOpenPanelCommand, CanExecuteOpenPanelCommand);
             CalculateSizeCommand = new DelegateCommand<bool>(ExecuteCalculateSizeCommand, CanExecuteCalculateSizeCommand);
             SortingCommand = new DelegateCommand<EventInformation<DataGridSortingEventArgs>>(ExecuteSortingCommand);
             ToggleSelectionCommand = new DelegateCommand<ToggleSelectionMode>(ExecuteToggleSelectionCommand);
@@ -1431,30 +1476,39 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
         protected virtual void ChangeDrive()
         {
             CurrentRow = null;
-            if (PathCache.ContainsKey(Drive))
+            // Place here ???
+            if (Drive.Type != ItemType.Panel)
             {
-                var path = PathCache[Drive];
-                var clearPath = new Regex(@"^(.*)[\\/].*(:[\\/]).*$");
-                path = clearPath.Replace(path, "$1");
-                //FtpTrace.WriteLine("[PathCache hit]");
-                var model = FileManager.GetItemInfo(path);
-                if (model != null)
+                if (PathCache.ContainsKey(Drive))
                 {
-                    TitleRecognizer.RecognizeType(model);
-                    if (path == Drive.Path) model.Type = ItemType.Drive;
-                    CurrentFolder = new FileSystemItemViewModel(model);
+                    var path = PathCache[Drive];
+                    var clearPath = new Regex(@"^(.*)[\\/].*(:[\\/]).*$");
+                    path = clearPath.Replace(path, "$1");
+                    //FtpTrace.WriteLine("[PathCache hit]");
+                    var model = FileManager.GetItemInfo(path, Drive.Type);
+                    if (model != null)
+                    {
+                        TitleRecognizer.RecognizeType(model);
+                        if (path == Drive.Path) model.Type = ItemType.Drive;
+                        CurrentFolder = new FileSystemItemViewModel(model);
+                    }
+                    else
+                    {
+                        CurrentFolder = Drive;
+                    }
                 }
                 else
                 {
                     CurrentFolder = Drive;
                 }
-            }
+                // Or Here ?
+                //FtpTrace.WriteLine("[ChangeDrive] " + CurrentFolder.Path);
+                ChangeDirectoryCommand.Execute(null);
+            } 
             else
             {
-                CurrentFolder = Drive;
+                OpenPanelCommand.Execute(); // Add path ?
             }
-            //FtpTrace.WriteLine("[ChangeDrive] " + CurrentFolder.Path);
-            ChangeDirectoryCommand.Execute(null);
         }
 
         public override void RaiseCanExecuteChanges()
@@ -1462,6 +1516,7 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             base.RaiseCanExecuteChanges();
             ChangeDirectoryCommand.RaiseCanExecuteChanged();
             OpenStfsPackageCommand.RaiseCanExecuteChanged();
+            OpenPanelCommand.RaiseCanExecuteChanged();
             CalculateSizeCommand.RaiseCanExecuteChanged();
             RefreshTitleCommand.RaiseCanExecuteChanged();
             RecognizeFromProfileCommand.RaiseCanExecuteChanged();

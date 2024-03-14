@@ -181,6 +181,7 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
                     var drive = GetDriveFromPath(Settings.Directory);
                     if (drive != null) PathCache.Add(drive, Settings.Directory);
                     Drive = drive ?? GetDefaultDrive();
+                    success?.Invoke(this);
                     break;
                 case LoadCommand.Restore:
                     var payload = cmdParam.Payload as BinaryContent;
@@ -284,11 +285,19 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
 
         private void UpdateDriveInfo()
         {
-            var driveInfo = DriveInfo.GetDrives().First(d => d.Name == Drive.Path);
-            DriveLabel = string.Format("[{0}]", string.IsNullOrEmpty(driveInfo.VolumeLabel) ? "_NONE_" : driveInfo.VolumeLabel);
-            var Available = ((string, string))new FileSizeConverter().Convert(driveInfo.AvailableFreeSpace, null, null, null);
-            var Total = ((string, string))new FileSizeConverter().Convert(driveInfo.TotalSize, null, null, null);
-            FreeSpaceText = String.Format(Resx.LocalFileSystemFreeSpace, Available.Item1, Resx.ResourceManager.GetString(Available.Item2), Total.Item1, Resx.ResourceManager.GetString(Total.Item2));
+            if (Drive.Type != ItemType.Panel)
+            {
+                var driveInfo = DriveInfo.GetDrives().First(d => d.Name == Drive.Path);
+                DriveLabel = string.Format("[{0}]", string.IsNullOrEmpty(driveInfo.VolumeLabel) ? "_NONE_" : driveInfo.VolumeLabel);
+                var Available = ((string, string))new FileSizeConverter().Convert(driveInfo.AvailableFreeSpace, null, null, null);
+                var Total = ((string, string))new FileSizeConverter().Convert(driveInfo.TotalSize, null, null, null);
+                FreeSpaceText = String.Format(Resx.LocalFileSystemFreeSpace, Available.Item1, Resx.ResourceManager.GetString(Available.Item2), Total.Item1, Resx.ResourceManager.GetString(Total.Item2));
+            } 
+            else
+            {
+                DriveLabel = "_NONE_";
+                FreeSpaceText = "";
+            }
         }
 
         public override string GetTargetPath(string path)

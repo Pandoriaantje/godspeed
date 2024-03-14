@@ -112,6 +112,9 @@ namespace Neurotoxin.Godspeed.Shell.Converters
                                 break;
                         }
                         break;
+                    case ItemType.Panel:
+                        icon = "xbox_logo";
+                        break;
                     default:
                         throw new NotSupportedException("Invalid item type: " + viewModel.Type);
                 }

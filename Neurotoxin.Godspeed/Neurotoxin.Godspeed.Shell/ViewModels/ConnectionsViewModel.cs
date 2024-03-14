@@ -89,21 +89,27 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             {
                 ConnectedFtp = FtpConnect(SelectedItem);
             }
-            else if (SelectedItem is FilePanelPlaceholderViewModel)
-            {
-                var pane = Container.Resolve<LocalFileSystemContentViewModel>();
-                pane.LoadDataAsync(LoadCommand.Load, new LoadDataAsyncParameters(Settings.Clone("/")), null, null);
-                EventAggregator.GetEvent<OpenNestedPaneEvent>().Publish(new OpenNestedPaneEventArgs(this, pane));
-            }
         }
 
         #endregion
 
+        #region CloseCommand
+
+        public DelegateCommand CloseCommand { get; private set; }
+
+        private void ExecuteCloseCommand()
+        {
+            EventAggregator.GetEvent<CloseNestedPaneEvent>().Publish(new CloseNestedPaneEventArgs(this, null));
+        }
+
+        #endregion
+        
         public ConnectionsViewModel(IDbContext dbContext)
         {
             _dbContext = dbContext;
 
             ConnectCommand = new DelegateCommand<object>(ExecuteConnectCommand, CanExecuteConnectCommand);
+            CloseCommand = new DelegateCommand(ExecuteCloseCommand);
             Items = new ObservableCollection<IStoredConnectionViewModel>();
 
             EventAggregator.GetEvent<ConnectionDetailsChangedEvent>().Subscribe(OnConnectionDetailsChanged);
@@ -115,14 +121,15 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             switch (cmd)
             {
                 case LoadCommand.Load:
-                    using (var db = _dbContext.Open())
+                    if (Items.Count == 0)
                     {
-                        Items.AddRange(db.Get<FtpConnection>().Select(c => new FtpConnectionItemViewModel(c)));
+                        using (var db = _dbContext.Open())
+                        {
+                            Items.AddRange(db.Get<FtpConnection>().Select(c => new FtpConnectionItemViewModel(c)));
+                        }
+                        var add = new NewConnectionPlaceholderViewModel();
+                        Items.Add(add);
                     }
-                    var add = new NewConnectionPlaceholderViewModel();
-                    Items.Add(add);
-                    var filePanel = new FilePanelPlaceholderViewModel();
-                    Items.Add(filePanel);
                     break;
                 case LoadCommand.Restore:
                     Save(cmdParam.Payload as FtpConnectionItemViewModel);

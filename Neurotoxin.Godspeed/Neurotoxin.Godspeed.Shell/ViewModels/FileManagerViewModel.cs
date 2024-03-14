@@ -375,7 +375,7 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
         {
             LeftPane = (IPaneViewModel)Container.Resolve(GetStoredPaneType(_userSettings.LeftPaneType));
             var leftParam = _userSettings.LeftPaneFileListPaneSettings;
-            LeftPane.LoadDataAsync(LoadCommand.Load, new LoadDataAsyncParameters(leftParam), PaneLoaded);
+            LeftPane.LoadDataAsync(LoadCommand.Load, new LoadDataAsyncParameters(leftParam));
             LeftPane.SetActive();
 
             RightPane = (IPaneViewModel)Container.Resolve(GetStoredPaneType(_userSettings.RightPaneType));

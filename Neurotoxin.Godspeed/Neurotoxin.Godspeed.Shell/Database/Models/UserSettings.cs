@@ -419,7 +419,7 @@ namespace Neurotoxin.Godspeed.Shell.Database.Models
             LeftPaneSortByField = @"ComputedName";
             LeftPaneSortDirection = (int) ListSortDirection.Ascending;
 
-            RightPaneType = typeof (ConnectionsViewModel).FullName;
+            RightPaneType = typeof (LocalFileSystemContentViewModel).FullName;
             RightPaneDirectory = @"C:\";
             RightPaneSortByField = @"ComputedName";
             RightPaneSortDirection = (int) ListSortDirection.Ascending;
