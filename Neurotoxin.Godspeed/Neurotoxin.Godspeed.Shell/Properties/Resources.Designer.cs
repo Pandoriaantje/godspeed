@@ -637,7 +637,7 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &lt;p&gt;&lt;b&gt;Credits:&lt;/b&gt;&lt;br/&gt;Developer: mercenary&lt;br/&gt;QA: mousetwentytwo&lt;br/&gt;Fix: Nemiroff&lt;br&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt;&lt;br/&gt;&lt;a href=&quot;http://twicker.ru/godspeed&quot; target=&quot;_blank&quot;&gt;http://twicker.ru/goodspeed&lt;/a&gt;&lt;/p&gt;.
+        ///   Ищет локализованную строку, похожую на &lt;p&gt;&lt;b&gt;Credits:&lt;/b&gt;&lt;br/&gt;Developer: mercenary&lt;br/&gt;QA: mousetwentytwo&lt;br/&gt;Fix: Nemiroff&lt;br&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt;&lt;br/&gt;&lt;a href=&quot;http://twicker.ru/godspeed&quot; target=&quot;_blank&quot;&gt;http://twicker.ru/godspeed&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
         internal static string CreditsContent {
             get {
@@ -1685,7 +1685,7 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на {0:#,0} of {1:#,0} bytes free.
+        ///   Ищет локализованную строку, похожую на {0:#,0} {1} of {2:#,0} {3} free.
         /// </summary>
         internal static string LocalFileSystemFreeSpace {
             get {
@@ -2882,7 +2882,7 @@ namespace Neurotoxin.Godspeed.Shell.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на {0:#,0} / {1:#,0} bytes in {2} / {3:file;files}, {4} / {5:dir;dirs}.
+        ///   Ищет локализованную строку, похожую на {0:#,0} {1} / {2:#,0} {3} in {4} / {5:file;files}, {6} / {7:dir;dirs}.
         /// </summary>
         internal static string SizeInfo {
             get {

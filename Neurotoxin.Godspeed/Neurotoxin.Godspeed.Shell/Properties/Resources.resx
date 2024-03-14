@@ -633,7 +633,7 @@
     <value>License Stores</value>
   </data>
   <data name="LocalFileSystemFreeSpace" xml:space="preserve">
-    <value>{0:#,0} of {1:#,0} bytes free</value>
+    <value>{0:#,0} {1} of {2:#,0} {3} free</value>
   </data>
   <data name="MigrationProgressDialogTitle" xml:space="preserve">
     <value>Migration</value>
@@ -912,7 +912,7 @@
     <value>Systemfile</value>
   </data>
   <data name="SizeInfo" xml:space="preserve">
-    <value>{0:#,0} / {1:#,0} bytes in {2} / {3:file;files}, {4} / {5:dir;dirs}</value>
+    <value>{0:#,0} {1} / {2:#,0} {3} in {4} / {5:file;files}, {6} / {7:dir;dirs}</value>
   </data>
   <data name="ReparsePointCannotBeResolved" xml:space="preserve">
     <value>Reparse point cannot be resolved.</value>

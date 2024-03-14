@@ -139,10 +139,10 @@
     <value>Вид</value>
   </data>
   <data name="ApplicationCrashed" xml:space="preserve">
-    <value>Application crashed</value>
+    <value>Ошибок приложения</value>
   </data>
   <data name="ApplicationIsBusy" xml:space="preserve">
-    <value>Application is busy</value>
+    <value>Приложение занято</value>
   </data>
   <data name="ApplicationStarted" xml:space="preserve">
     <value>Приложение запущено</value>
@@ -193,13 +193,13 @@
     <value>Отмена</value>
   </data>
   <data name="CannotCreateFavoriteWithNoName" xml:space="preserve">
-    <value>Cannot save favorite folder with no name</value>
+    <value>Нельзя сохранить в избранное без имени</value>
   </data>
   <data name="CannotCreateFolderWithInvalidCharacters" xml:space="preserve">
     <value>Cannot create folder with invalid characters in its name!</value>
   </data>
   <data name="CannotCreateFolderWithNoName" xml:space="preserve">
-    <value>Cannot create folder with no name!</value>
+    <value>Нельзя создать папку без имени!</value>
   </data>
   <data name="CannotReestablishConnection" xml:space="preserve">
     <value>Cannot reestablish connection. (Error: {0})</value>
@@ -208,16 +208,16 @@
     <value>Не удалось подключиться к {0}: {1}</value>
   </data>
   <data name="CantOpenFile" xml:space="preserve">
-    <value>Can't open {0}</value>
+    <value>Не удалось открыть {0}</value>
   </data>
   <data name="Change" xml:space="preserve">
     <value>Изменить</value>
   </data>
   <data name="ChangingDirectory" xml:space="preserve">
-    <value>Changing directory</value>
+    <value>Изменение пути</value>
   </data>
   <data name="ChangingDirectoryDataReceived" xml:space="preserve">
-    <value>Changing directory... ({0:#,0} bytes received)</value>
+    <value>Изменение пути... ({0:#,0} б получено)</value>
   </data>
   <data name="CheckForNewerVersionOnStartup" xml:space="preserve">
     <value>Проверка обновлений при запуске</value>
@@ -356,10 +356,10 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Your FSD/F3 WebUI cannot be accessed. Without that the automatic FSD/F3 Content Scan Trigger cannot work. Do you want to turn this feature off?</value>
   </data>
   <data name="DisableFsdContentScanTriggerTitle" xml:space="preserve">
-    <value>Disable FSD/F3 Content Scan Trigger</value>
+    <value>Отключить триггер сканирования контента F3/Aurora</value>
   </data>
   <data name="DisableFsdStatusPolling" xml:space="preserve">
-    <value>Disable FSD/F3 status polling</value>
+    <value>Отключить запрос статуса F3/Aurora</value>
   </data>
   <data name="DisableNotificationSound" xml:space="preserve">
     <value>Выключить звук уведомления</value>
@@ -380,7 +380,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Отключиться</value>
   </data>
   <data name="DontShowThisMessageAgain" xml:space="preserve">
-    <value>Don't show this message again</value>
+    <value>Не показывать это сообщение</value>
   </data>
   <data name="Download" xml:space="preserve">
     <value>Download</value>
@@ -398,7 +398,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Вы хотите переподключиться?</value>
   </data>
   <data name="DoYouWantToRemoveItFromTheFavorites" xml:space="preserve">
-    <value>Do you want to remove it from the favorites?</value>
+    <value>Вы действительно хотите удалить из избранного?</value>
   </data>
   <data name="DriveChangeFailed" xml:space="preserve">
     <value>Drive change failed</value>
@@ -434,7 +434,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Избранное</value>
   </data>
   <data name="FavoriteWithNameAlreadyExists" xml:space="preserve">
-    <value>A favorite folder with the same name already exists</value>
+    <value>Избранное с таким именем уже существует.</value>
   </data>
   <data name="FilesMenu" xml:space="preserve">
     <value>Файл</value>
@@ -611,7 +611,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Partial (ISO Cropped)</value>
   </data>
   <data name="IsoToGodConversion" xml:space="preserve">
-    <value>ISO to GOD conversion</value>
+    <value>Конвертер ISO в GOD</value>
   </data>
   <data name="ItemNotExistsOnPath" xml:space="preserve">
     <value>Item not exists on path: {0}</value>
@@ -659,7 +659,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>License Store</value>
   </data>
   <data name="LocalFileSystemFreeSpace" xml:space="preserve">
-    <value>{0:#,0} из {1:#,0} байт свободно</value>
+    <value>{0:#,0} {1} из {2:#,0} {3} свободно</value>
   </data>
   <data name="LockedProfileCopyMessage" xml:space="preserve">
     <value>&lt;b&gt;You tried to copy one or more locked profiles. Please note that these files are inaccessible while you are signed in on your Xbox and GODspeed ignored them automatically.&lt;/b&gt;</value>
@@ -923,7 +923,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Распознать Titles из Профиля</value>
   </data>
   <data name="RecognizingItem" xml:space="preserve">
-    <value>Recognizing item {0} ({1} left)</value>
+    <value>Распознание {0} ({1} осталось)</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Обновить</value>
@@ -983,7 +983,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Повтор</value>
   </data>
   <data name="SaveAndClose" xml:space="preserve">
-    <value>Save and Close</value>
+    <value>Сохранить и закрыть</value>
   </data>
   <data name="SavedGamePlural" xml:space="preserve">
     <value>Saved Games</value>
@@ -1058,7 +1058,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Размер</value>
   </data>
   <data name="SizeInfo" xml:space="preserve">
-    <value>{0:#,0} / {1:#,0} байт в {2} / {3:файле;файлах}, {4} / {5:папка;папок}</value>
+    <value>{0:#,0} {1} из {2:#,0} {3}, файлов: {4} из {5}, папок: {6} из {7}</value>
   </data>
   <data name="Skip" xml:space="preserve">
     <value>Пропустить</value>
@@ -1205,10 +1205,10 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Всего файлов передано</value>
   </data>
   <data name="TotalTimeSpentWithTransfer" xml:space="preserve">
-    <value>Total time spent with transfer</value>
+    <value>Общее время, затраченное на копирование</value>
   </data>
   <data name="TotalUsageTime" xml:space="preserve">
-    <value>Total usage time</value>
+    <value>Общее время использования</value>
   </data>
   <data name="TurnOffRemoteCopyAndContinue" xml:space="preserve">
     <value>Turn off Remote Copy and Continue</value>
@@ -1217,7 +1217,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Тип</value>
   </data>
   <data name="UnableToLaunchGame" xml:space="preserve">
-    <value>Unable to launch game. (Error code: {0} - {1})</value>
+    <value>Не удалось запустить игру. (Код ошибки: {0} - {1})</value>
   </data>
   <data name="UnhandledErrorOccurred" xml:space="preserve">
     <value>Unhandled error occurred</value>
@@ -1241,7 +1241,7 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Не распознанная игра</value>
   </data>
   <data name="UpdateErrorOccurred" xml:space="preserve">
-    <value>An error occurred while updating. Please try again later, and if you still have trouble, report error.</value>
+    <value>Произошла ошибка при обновлении. Попробуйте позже, если ошибка повторится, сообщите об этом через кнопку Report.</value>
   </data>
   <data name="Upload" xml:space="preserve">
     <value>Загрузка</value>
@@ -1318,10 +1318,10 @@ Do you want to delete the old application data from your hard drive?</value>
     <value>Viral Video</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Предупреждение</value>
   </data>
   <data name="WhatDoYouWantToDo" xml:space="preserve">
-    <value>What do you want to do?</value>
+    <value>Что вы хотите сделать?</value>
   </data>
   <data name="WriteErrorDialogButtonWidth" xml:space="preserve">
     <value>116</value>

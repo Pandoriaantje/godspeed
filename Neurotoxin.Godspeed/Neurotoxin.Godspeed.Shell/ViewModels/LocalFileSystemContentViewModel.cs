@@ -20,6 +20,8 @@ using Neurotoxin.Godspeed.Shell.Interfaces;
 using Neurotoxin.Godspeed.Shell.Models;
 using Resx = Neurotoxin.Godspeed.Shell.Properties.Resources;
 using Neurotoxin.Godspeed.Core.Constants;
+using Neurotoxin.Godspeed.Shell.Converters;
+using Neurotoxin.Godspeed.Presentation.Converters;
 
 namespace Neurotoxin.Godspeed.Shell.ViewModels
 {
@@ -284,7 +286,9 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
         {
             var driveInfo = DriveInfo.GetDrives().First(d => d.Name == Drive.Path);
             DriveLabel = string.Format("[{0}]", string.IsNullOrEmpty(driveInfo.VolumeLabel) ? "_NONE_" : driveInfo.VolumeLabel);
-            FreeSpaceText = String.Format(Resx.LocalFileSystemFreeSpace, driveInfo.AvailableFreeSpace, driveInfo.TotalSize);
+            var Available = ((string, string))new FileSizeConverter().Convert(driveInfo.AvailableFreeSpace, null, null, null);
+            var Total = ((string, string))new FileSizeConverter().Convert(driveInfo.TotalSize, null, null, null);
+            FreeSpaceText = String.Format(Resx.LocalFileSystemFreeSpace, Available.Item1, Resx.ResourceManager.GetString(Available.Item2), Total.Item1, Resx.ResourceManager.GetString(Total.Item2));
         }
 
         public override string GetTargetPath(string path)

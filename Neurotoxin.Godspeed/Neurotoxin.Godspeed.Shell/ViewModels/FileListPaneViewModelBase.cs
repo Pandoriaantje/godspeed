@@ -33,6 +33,7 @@ using Microsoft.Practices.ObjectBuilder2;
 using Neurotoxin.Godspeed.Core.Extensions;
 using ServiceStack.OrmLite;
 using Resx = Neurotoxin.Godspeed.Shell.Properties.Resources;
+using Neurotoxin.Godspeed.Presentation.Converters;
 
 namespace Neurotoxin.Godspeed.Shell.ViewModels
 {
@@ -1369,14 +1370,21 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
 
         protected virtual string GetSizeInfo()
         {
-                var selectedSize = Items.Where(item => item.Size != null && item.IsSelected).Sum(item => item.Size.Value);
-                var totalSize = Items.Where(item => item.Size != null).Sum(item => item.Size.Value);
-                var selectedFileCount = Items.Count(item => item.Type == ItemType.File && item.IsSelected);
-                var totalFileCount = Items.Count(item => item.Type == ItemType.File);
-                var selectedDirCount = Items.Count(item => item.Type == ItemType.Directory && item.IsSelected);
-                var totalDirCount = Items.Count(item => item.Type == ItemType.Directory && !item.IsUpDirectory);
+            var selectedSizeBytes = Items.Where(item => item.Size != null && item.IsSelected).Sum(item => item.Size.Value);
+            var selectedSize = ((string, string))new FileSizeConverter().Convert(selectedSizeBytes, null, null, null);
+            
+            var totalSizeBytes = Items.Where(item => item.Size != null).Sum(item => item.Size.Value);
+            var totalSize = ((string, string))new FileSizeConverter().Convert(totalSizeBytes, null, null, null);
 
-                return string.Format(new PluralFormatProvider(), Resx.SizeInfo, selectedSize, totalSize, selectedFileCount, totalFileCount, selectedDirCount, totalDirCount);
+            var selectedFileCount = Items.Count(item => item.Type == ItemType.File && item.IsSelected);
+            var totalFileCount = Items.Count(item => item.Type == ItemType.File);
+            var selectedDirCount = Items.Count(item => item.Type == ItemType.Directory && item.IsSelected);
+            var totalDirCount = Items.Count(item => item.Type == ItemType.Directory && !item.IsUpDirectory);
+
+            return string.Format(new PluralFormatProvider(), Resx.SizeInfo,
+                selectedSize.Item1, Resx.ResourceManager.GetString(selectedSize.Item2),
+                totalSize.Item1, Resx.ResourceManager.GetString(totalSize.Item2),
+                selectedFileCount, totalFileCount, selectedDirCount, totalDirCount);
         }
 
         public FileExistenceInfo FileExists(string path)
