@@ -6,7 +6,7 @@ namespace Neurotoxin.Godspeed.Shell.Views.Dialogs
 {
     public partial class TransferProgressDialog : IView<ITransferManagerViewModel>
     {
-        public const string BytesFormat = "{0:#,0} / {1:#,0} Bytes";
+        public const string BytesFormat = "{0} / {1}";
         public const string TitleFormat = "{0} ({1}%)";
         public const string FileCountFormat = "{0} / {1}";
         public const string SpeedFormat = "{0} KBps";

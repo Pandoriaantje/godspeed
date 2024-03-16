@@ -19,6 +19,7 @@ using Neurotoxin.Godspeed.Shell.Views.Dialogs;
 using Neurotoxin.Godspeed.Presentation.Infrastructure;
 using System.Linq;
 using Resx = Neurotoxin.Godspeed.Shell.Properties.Resources;
+using Neurotoxin.Godspeed.Presentation.Converters;
 
 namespace Neurotoxin.Godspeed.Shell.ViewModels
 {
@@ -140,9 +141,23 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
             set
             {
                 _bytesTransferred = value;
+                BytesTransferredSize = value.ToString();
                 NotifyPropertyChanged(BYTESTRANSFERRED);
                 NotifyPropertyChanged(TOTALPROGRESS);
                 NotifyPropertyChanged(TOTALPROGRESSDOUBLE);
+            }
+        }
+
+        private const string BYTESTRANSFERREDSIZE = "BytesTransferredSize";
+        private string _bytesTransferredSize;
+        public string BytesTransferredSize
+        {
+            get { return _bytesTransferredSize; }
+            set
+            {
+                (string, string) hs = ((string, string))new FileSizeConverter().Convert(long.Parse(value), null, null, null);
+                _bytesTransferredSize = string.Format("{0} {1}", hs.Item1, Resx.ResourceManager.GetString(hs.Item2));
+                NotifyPropertyChanged(BYTESTRANSFERREDSIZE);
             }
         }
 
@@ -151,8 +166,26 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
         public long TotalBytes
         {
             get { return _totalBytes; }
-            set { _totalBytes = value; NotifyPropertyChanged(TOTALBYTES); }
+            set {
+                _totalBytes = value;
+                TotalBytesSize = value.ToString();
+                NotifyPropertyChanged(TOTALBYTES); 
+            }
         }
+
+        private const string TOTALBYTESSIZE = "TotalBytesSize";
+        private string _totalBytesSize;
+        public string TotalBytesSize
+        {
+            get { return _totalBytesSize; }
+            set {
+                (string, string) hs =((string, string)) new FileSizeConverter().Convert(long.Parse(value), null, null, null);
+
+                _totalBytesSize = string.Format("{0} {1}", hs.Item1, Resx.ResourceManager.GetString(hs.Item2));
+                NotifyPropertyChanged(TOTALBYTESSIZE); 
+            }
+        }
+
 
         private const string SPEED = "Speed";
         private int _speed;

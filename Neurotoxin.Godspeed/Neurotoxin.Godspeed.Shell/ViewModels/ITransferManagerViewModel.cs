@@ -23,6 +23,8 @@ namespace Neurotoxin.Godspeed.Shell.ViewModels
         int FileCount { get; set; }
         long BytesTransferred { get; set; }
         long TotalBytes { get; set; }
+        string BytesTransferredSize { get; set; }
+        string TotalBytesSize { get; set; }
         int Speed { get; set; }
         TimeSpan ElapsedTime { get; set; }
         TimeSpan RemainingTime { get; set; }

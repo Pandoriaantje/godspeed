@@ -5,10 +5,6 @@
                        xmlns:dialogs="clr-namespace:Neurotoxin.Godspeed.Shell.Views.Dialogs"
                        xmlns:primitives="clr-namespace:Neurotoxin.Godspeed.Shell.Primitives" 
                        xmlns:lex="http://wpflocalizeextension.codeplex.com"
-                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-                       xmlns:c="clr-namespace:Neurotoxin.Godspeed.Presentation.Controls;assembly=Neurotoxin.Godspeed.Presentation"
-                       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-                       xmlns:b="clr-namespace:Neurotoxin.Godspeed.Shell.Views.Behaviors"
                        lex:LocalizeDictionary.DesignCulture="en-US"
                        lex:ResxLocalizationProvider.DefaultAssembly="Neurotoxin.Godspeed.Shell"
                        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
@@ -79,9 +75,8 @@
             <TextBlock HorizontalAlignment="Right" Visibility="{Binding UserAction, Converter={StaticResource FileOperationConverter}}">
                 <TextBlock.Text>
                     <MultiBinding StringFormat="{x:Static dialogs:TransferProgressDialog.BytesFormat}">
-                        <Binding Path="BytesTransferred" />
-                        <Binding Path="TotalBytes" />
-                        <Binding Path="Size" />
+                        <Binding Path="BytesTransferredSize" />
+                        <Binding Path="TotalBytesSize" />
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
